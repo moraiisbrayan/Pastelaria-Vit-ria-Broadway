@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pastelaria Vitória Broadway | Pastel frito na hora em Somerville, MA</title>
+<meta name="description" content="Pastelaria Vitória Broadway: pastel frito na hora, coxinha, X-tudo, comida caseira e caldo de cana. Um pedacinho do Brasil na 192 Broadway, Somerville, MA.">
+<meta name="theme-color" content="#0d0b09">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:wght@400;700&family=Lobster&family=Permanent+Marker&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0b09; --bg2:#14100c; --card:#1b1611; --line:rgba(255,255,255,.08);
+  --yellow:#FFC21A; --orange:#F7931E; --red:#D62828; --red2:#B81F1F; --green:#1F8A3E; --green2:#145F2B;
+  --cream:#FFF4DC; --paper:#FFFAEF; --text:#F6EFE4; --muted:#B5A993; --ink:#1a0f00;
+  --grad:linear-gradient(135deg,#FFD63F 0%,#FFC21A 42%,#F7931E 100%);
+  --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+svg{display:block;max-width:100%;overflow:visible}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.marker{font-family:'Permanent Marker',cursive;font-weight:400}
+section{position:relative;scroll-margin-top:70px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:700;font-size:1rem;transition:transform .2s,box-shadow .2s,background .2s,color .2s;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--grad);color:var(--ink);box-shadow:0 12px 30px -10px rgba(247,147,30,.75),inset 0 -3px 0 rgba(0,0,0,.12)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px -10px rgba(247,147,30,.85),inset 0 -3px 0 rgba(0,0,0,.12)}
+.btn-ghost{border:2px solid rgba(255,255,255,.2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--yellow);color:var(--yellow)}
+.btn-ink{background:var(--ink);color:var(--yellow)}
+.btn-ink:hover{transform:translateY(-2px);background:#000}
+.btn-white{background:#fff;color:var(--red)}
+.btn-white:hover{transform:translateY(-2px)}
+
+/* top bar */
+.topbar{background:#000;font-size:.8rem;color:var(--muted);position:relative;z-index:31}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:38px;flex-wrap:wrap;padding-top:5px;padding-bottom:5px}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--text)}
+.dot{width:8px;height:8px;border-radius:50%;background:#777;flex:none}
+.status.open .dot{background:#3ddc6b;animation:pulse 2s infinite}
+.status.closed .dot{background:var(--red)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,107,.6)}70%{box-shadow:0 0 0 8px rgba(61,220,107,0)}100%{box-shadow:0 0 0 0 rgba(61,220,107,0)}}
+.tb-right{display:flex;align-items:center;gap:18px}
+.tb-right a:hover{color:var(--yellow)}
+.lang{display:inline-flex;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:2px}
+.lang button{padding:2px 10px;font-size:.72rem;font-weight:700;color:var(--muted);border-radius:999px}
+.lang button.on{background:var(--yellow);color:var(--ink)}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:30;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+header.nav.scrolled{background:rgba(13,11,9,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:80px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{width:58px;height:58px;filter:drop-shadow(0 6px 12px rgba(0,0,0,.5))}
+.brand-txt{line-height:1}
+.brand-txt b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:1.08rem;letter-spacing:1.5px}
+.brand-txt span{font-family:'Lobster',cursive;color:var(--yellow);font-size:1.15rem}
+.menu{display:flex;align-items:center;gap:32px;font-weight:500;font-size:.95rem}
+.menu a:not(.btn){position:relative;color:#e9e0d1;padding:8px 0}
+.menu a:not(.btn)::after{content:"";position:absolute;left:50%;bottom:0;width:6px;height:6px;border-radius:50%;background:var(--yellow);transform:translateX(-50%) scale(0);transition:transform .25s}
+.menu a:not(.btn):hover::after{transform:translateX(-50%) scale(1)}
+.menu .btn{padding:12px 22px;font-size:.92rem}
+.burger{display:none;width:46px;height:46px;border-radius:14px;border:1px solid var(--line);align-items:center;justify-content:center;background:rgba(0,0,0,.3)}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;position:relative;transition:.25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.nav.open .burger span{background:transparent}
+.nav.open .burger span::before{top:0;transform:rotate(45deg)}
+.nav.open .burger span::after{top:0;transform:rotate(-45deg)}
+
+/* hero */
+.hero{margin-top:-80px;padding:130px 0 150px;min-height:min(980px,100vh);display:flex;align-items:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 76% 46%,rgba(247,147,30,.32) 0%,rgba(247,147,30,.08) 45%,transparent 70%),radial-gradient(ellipse 40% 40% at 10% 90%,rgba(214,40,40,.14),transparent 70%)}
+.bg-word{position:absolute;left:50%;bottom:-2.5vw;transform:translateX(-50%);font-family:'Anton',sans-serif;font-size:min(30vw,420px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,194,26,.09);white-space:nowrap;pointer-events:none;letter-spacing:8px;user-select:none}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 8px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:.86rem;font-weight:600;color:#eadfcc;margin-bottom:26px}
+.eyebrow svg{width:26px;height:18px;border-radius:3px}
+.hero h1{font-weight:400;line-height:.95;margin-bottom:26px}
+.hero h1 .l1{display:block;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(2.3rem,4.6vw,4rem);letter-spacing:.5px}
+.hero h1 .l2{display:block;font-family:'Permanent Marker',cursive;color:var(--yellow);font-size:clamp(1.5rem,2.6vw,2.2rem);rotate:-3deg;margin:14px 0 14px 4px;line-height:1}
+.hero h1 .l3{display:inline-block;position:relative;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(3.6rem,9vw,7.8rem);letter-spacing:1px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:4px;filter:drop-shadow(0 10px 30px rgba(247,147,30,.25))}
+.hero h1 .l3::after{content:"";position:absolute;left:2%;right:0;bottom:-10px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 18' preserveAspectRatio='none'%3E%3Cpath d='M3 12 C90 3 220 2 397 7 C300 11 160 15 6 17Z' fill='%23D62828'/%3E%3C/svg%3E") no-repeat center/100% 100%}
+.lead{font-size:1.1rem;color:#d8cebd;max-width:520px;margin-bottom:34px}
+.lead b{color:var(--cream);font-weight:600}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.facts{display:flex;gap:0;margin-top:42px;border-top:1px solid var(--line);padding-top:24px;max-width:540px}
+.fact{flex:1;padding-right:18px}
+.fact + .fact{padding-left:18px;border-left:1px solid var(--line)}
+.fact b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:2rem;line-height:1;color:var(--yellow);letter-spacing:.5px}
+.fact span{font-size:.82rem;color:var(--muted);line-height:1.35;display:block;margin-top:6px}
+
+.stage{position:relative;aspect-ratio:1/1;width:100%;max-width:600px;justify-self:center}
+.stage .ring{position:absolute;inset:6%;border-radius:50%;border:1px dashed rgba(255,194,26,.25)}
+.stage .ring.r2{inset:16%;border:1px solid rgba(255,194,26,.1);background:radial-gradient(circle,rgba(255,194,26,.16),transparent 70%)}
+.paper{position:absolute;left:14%;top:26%;width:70%;aspect-ratio:1.15;background:linear-gradient(135deg,#FFFDF6,#EFE6D2);border-radius:6px;rotate:9deg;box-shadow:0 40px 60px -20px rgba(0,0,0,.7);overflow:hidden}
+.paper::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 70%,rgba(230,170,60,.28) 0 7%,transparent 14%),radial-gradient(circle at 74% 30%,rgba(230,170,60,.22) 0 5%,transparent 11%),radial-gradient(circle at 60% 82%,rgba(230,170,60,.18) 0 4%,transparent 9%)}
+.paper::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(214,40,40,.06) 22px 23px)}
+.p-back{position:absolute;width:62%;right:2%;top:20%;rotate:14deg;filter:brightness(.82) drop-shadow(0 20px 20px rgba(60,20,0,.5))}
+.p-main{position:absolute;width:82%;left:6%;top:30%;rotate:-9deg;filter:drop-shadow(0 34px 28px rgba(50,15,0,.6));animation:float 5s ease-in-out infinite;will-change:transform}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.p-cox{position:absolute;width:24%;right:4%;bottom:4%;rotate:12deg;filter:drop-shadow(0 22px 18px rgba(0,0,0,.55));animation:float 6s ease-in-out infinite .8s;will-change:transform}
+.p-cana{position:absolute;width:22%;left:0;bottom:2%;rotate:-6deg;filter:drop-shadow(0 22px 18px rgba(0,0,0,.55));animation:float 5.6s ease-in-out infinite 1.4s;will-change:transform}
+.steam{position:absolute;left:30%;top:6%;width:38%}
+.steam path{fill:none;stroke:#fff;stroke-width:6;stroke-linecap:round;opacity:0;animation:steam 3.4s ease-in-out infinite}
+.steam path:nth-child(2){animation-delay:1.1s}.steam path:nth-child(3){animation-delay:2.2s}
+@keyframes steam{0%{opacity:0;transform:translateY(24px)}35%{opacity:.4}100%{opacity:0;transform:translateY(-34px)}}
+.seal{position:absolute;left:2%;top:4%;width:30%;aspect-ratio:1}
+.seal .spin{position:absolute;inset:0;animation:spin 22s linear infinite}
+.seal .spin text{font-family:'Anton',sans-serif;font-size:13px;fill:var(--cream)}
+.seal .core{position:absolute;inset:19%;border-radius:50%;background:var(--red);display:grid;place-items:center;text-align:center;box-shadow:0 14px 30px -6px rgba(214,40,40,.7),inset 0 0 0 4px rgba(255,255,255,.18);rotate:-10deg}
+.seal .core span{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(.85rem,1.6vw,1.2rem);line-height:1;color:#fff}
+.seal .core small{display:block;font-family:'Lobster',cursive;text-transform:none;color:var(--yellow);font-size:1.05em;margin-top:2px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spark{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px 2px rgba(255,194,26,.7);animation:twinkle 3s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1)}}
+
+/* section heads */
+.sec{padding:130px 0}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-family:'Permanent Marker',cursive;color:var(--yellow);font-size:1.2rem;rotate:-2deg;margin-bottom:10px}
+.kicker::before{content:"";width:28px;height:3px;border-radius:3px;background:currentColor}
+.h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1;letter-spacing:.5px}
+.h2 em{font-style:normal;font-family:'Lobster',cursive;text-transform:none;color:var(--yellow);font-size:1.08em;letter-spacing:0}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:54px;flex-wrap:wrap}
+.head p{color:var(--muted);max-width:420px;font-size:1.02rem}
+.head.center{flex-direction:column;align-items:center;text-align:center}
+.head.center p{max-width:560px}
+
+/* bento menu */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(250px,auto);gap:18px}
+.tile{position:relative;border-radius:30px;padding:28px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:var(--card);border:1px solid var(--line);isolation:isolate;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.tile:hover{transform:translateY(-6px)}
+.tile .art{position:absolute;z-index:-1;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.tile:hover .art{transform:scale(1.06) rotate(-3deg)}
+.tile h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:2rem;line-height:1;letter-spacing:.5px;margin-bottom:8px}
+.tile p{font-size:.93rem;color:var(--muted);max-width:340px}
+.tile .tag{position:absolute;z-index:2;top:22px;left:22px;font-size:.74rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:rgba(10,8,6,.72);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.t-pastel{grid-column:span 2;grid-row:span 2;background:var(--grad);color:var(--ink);border:0;justify-content:flex-end;padding:36px}
+.t-pastel::before{content:"";position:absolute;inset:0;z-index:-2;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.08) 0 16px,transparent 16px 32px)}
+.t-pastel .art{width:86%;left:4%;top:3%;rotate:-7deg;filter:drop-shadow(0 30px 24px rgba(110,45,0,.45))}
+.t-pastel h3{font-size:clamp(3rem,6vw,5rem)}
+.t-pastel p{color:rgba(26,15,0,.78);font-size:1.02rem;max-width:460px;font-weight:500}
+.t-pastel .tag{background:var(--ink);color:var(--yellow);border:0}
+.flv{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.flv span{font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1.5px solid rgba(26,15,0,.35)}
+.stamp{position:absolute;right:28px;top:26px;width:108px;height:108px;border-radius:50%;border:3px solid var(--red);color:var(--red);display:grid;place-items:center;text-align:center;rotate:14deg;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:.95rem;line-height:1.05;letter-spacing:.5px;background:rgba(255,255,255,.18)}
+.stamp::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1.5px dashed var(--red)}
+.t-cox .art{width:56%;right:-4%;top:-4%;rotate:10deg;filter:drop-shadow(0 20px 18px rgba(0,0,0,.55))}
+.t-cana{background:linear-gradient(160deg,#23A04B 0%,#156B2F 60%,#0E4A20 100%);border:0}
+.t-cana p{color:rgba(255,255,255,.75)}
+.t-cana .art{width:34%;right:6%;top:-14%;rotate:10deg;filter:drop-shadow(0 20px 18px rgba(0,0,0,.4))}
+.t-burger{grid-column:span 2}
+.t-burger .art{width:52%;right:-2%;top:50%;translate:0 -50%;filter:drop-shadow(0 24px 20px rgba(0,0,0,.55))}
+.t-burger p{max-width:46%}
+.t-burger h3,.t-burger p{position:relative}
+.t-prato{background:linear-gradient(160deg,#E03A30 0%,#B81F1F 70%);border:0}
+.t-prato p{color:rgba(255,255,255,.8)}
+.t-prato .art{width:66%;right:-10%;top:-12%;filter:drop-shadow(0 20px 18px rgba(0,0,0,.4))}
+.t-doce .art{width:50%;right:0;top:-4%;rotate:8deg;filter:drop-shadow(0 20px 18px rgba(0,0,0,.55))}
+.t-more{grid-column:span 2;background:transparent;border:2px dashed rgba(255,194,26,.35);justify-content:center;align-items:flex-start;gap:12px}
+.t-more .marker{color:var(--yellow);font-size:1.7rem;rotate:-2deg;line-height:1}
+.t-more p{color:#e2d7c4;font-size:1.02rem;max-width:520px}
+.t-more p b{color:var(--yellow);font-weight:600}
+.t-cox h3,.t-cox p,.t-cana h3,.t-cana p,.t-prato h3,.t-prato p,.t-doce h3,.t-doce p{position:relative}
+.tile .shade{position:absolute;left:0;right:0;bottom:0;height:65%;z-index:-1;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent)}
+
+/* builder */
+.builder{background:var(--grad);color:var(--ink);overflow:hidden}
+.builder::before{content:"";position:absolute;inset:0;opacity:.25;background-image:radial-gradient(rgba(255,255,255,.7) 1.5px,transparent 1.6px);background-size:26px 26px}
+.builder .kicker{color:var(--red)}
+.builder .h2 em{color:var(--red)}
+.builder .head p{color:rgba(26,15,0,.75)}
+.b-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.panel{background:var(--ink);color:var(--text);border-radius:30px;padding:34px;box-shadow:0 40px 70px -30px rgba(80,30,0,.6)}
+.panel h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.4rem;letter-spacing:1px}
+.panel .hint{color:var(--muted);font-size:.9rem;margin:4px 0 22px}
+.grp{margin-bottom:20px}
+.grp > small{display:block;text-transform:uppercase;letter-spacing:2px;font-size:.7rem;color:var(--orange);font-weight:700;margin-bottom:10px}
+.fills{display:flex;flex-wrap:wrap;gap:10px}
+.fill{display:inline-flex;align-items:center;gap:8px;padding:10px 16px 10px 12px;border-radius:14px;border:1.5px solid rgba(255,255,255,.14);font-weight:600;font-size:.92rem;transition:.2s;background:rgba(255,255,255,.03)}
+.fill i{width:12px;height:12px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 2px rgba(0,0,0,.15)}
+.fill:hover{border-color:var(--yellow)}
+.fill[aria-pressed="true"]{background:var(--yellow);border-color:var(--yellow);color:var(--ink);transform:translateY(-2px);box-shadow:0 8px 18px -8px rgba(255,194,26,.8)}
+.fill:disabled{opacity:.3;cursor:not-allowed}
+.sugg{margin-top:26px;padding-top:22px;border-top:1px dashed rgba(255,255,255,.14)}
+.sugg > small{display:block;font-family:'Permanent Marker',cursive;color:var(--yellow);font-size:1rem;margin-bottom:12px}
+.sugg-list{display:flex;flex-wrap:wrap;gap:8px}
+.sugg-list button{padding:8px 14px;border-radius:999px;background:rgba(255,194,26,.1);border:1px solid rgba(255,194,26,.3);color:var(--cream);font-size:.84rem;font-weight:600;transition:.2s}
+.sugg-list button:hover{background:var(--yellow);color:var(--ink)}
+.ticket-col{position:relative;display:flex;flex-direction:column;align-items:center;gap:26px}
+.ticket{position:relative;width:100%;max-width:400px;background:var(--paper);color:#2b2118;font-family:'Courier Prime',ui-monospace,monospace;padding:30px 30px 34px;rotate:2deg;filter:drop-shadow(0 30px 30px rgba(90,35,0,.35))}
+.ticket::before,.ticket::after{content:"";position:absolute;left:0;right:0;height:14px;background-size:16px 14px;background-repeat:repeat-x}
+.ticket::before{top:-13px;background-image:linear-gradient(135deg,transparent 50%,var(--paper) 50%),linear-gradient(-135deg,transparent 50%,var(--paper) 50%);background-position:0 0,0 0}
+.ticket::after{bottom:-13px;background-image:linear-gradient(135deg,transparent 50%,var(--paper) 50%),linear-gradient(-135deg,transparent 50%,var(--paper) 50%);transform:scaleY(-1)}
+.tk-head{text-align:center}
+.tk-head b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:1.5rem;letter-spacing:2px;color:var(--ink);line-height:1}
+.tk-head span{font-family:'Lobster',cursive;color:var(--red);font-size:1.25rem}
+.tk-head small{display:block;font-size:.8rem;margin-top:4px;color:#6f6253}
+.tk-hr{border:0;border-top:2px dashed #cdbfa8;margin:14px 0}
+.tk-row{display:flex;justify-content:space-between;gap:10px;font-size:.92rem}
+.tk-row.big{font-weight:700;font-size:1.05rem}
+.tk-items{min-height:96px}
+.tk-items .tk-row{padding:3px 0;animation:slip .35s ease both}
+.tk-items .empty{color:#9a8b78;font-style:italic;font-size:.9rem;padding:4px 0}
+@keyframes slip{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.tk-msg{text-align:center;font-family:'Permanent Marker',cursive;color:var(--red);font-size:1.15rem;margin-top:14px;min-height:1.5em;rotate:-2deg}
+.tk-pastel{position:absolute;width:190px;right:-70px;top:-58px;rotate:18deg;filter:drop-shadow(0 18px 16px rgba(90,35,0,.35));transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.tk-pastel.pop{transform:scale(1.12) rotate(-6deg)}
+.b-note{font-size:.82rem;color:rgba(26,15,0,.7);text-align:center;max-width:380px}
+
+/* mural */
+.mural{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.post{position:relative;aspect-ratio:1/1;border-radius:22px;overflow:hidden;background:#0b0907;border:1px solid var(--line);display:block;isolation:isolate;transition:transform .35s;container-type:inline-size}
+.post:hover{transform:translateY(-6px) rotate(-.6deg)}
+.post .ig{position:absolute;right:12px;top:12px;width:34px;height:34px;border-radius:10px;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:5;color:#fff}
+.post .ig svg{width:18px;height:18px}
+.p1{background:linear-gradient(180deg,#0b0907 50%,#2a1606)}
+.p1 .stack{position:absolute;left:7cqw;top:6cqw;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:17cqw;line-height:.86}
+.p1 .stack span{display:block;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.p1 .stack span:first-child{opacity:.35}
+.p1 .txt{position:absolute;left:8cqw;right:8cqw;top:53cqw;color:#fff;font-weight:600;font-size:max(12px,3.6cqw);line-height:1.35}
+.p1 > svg{position:absolute;width:74%;left:13%;bottom:-8cqw;rotate:-6deg}
+.p2{background:radial-gradient(circle at 50% 70%,#4b2c10,#140c06 75%)}
+.p2 .big{position:absolute;left:0;right:0;top:9cqw;text-align:center;font-family:'Anton',sans-serif;color:#fff;font-size:14cqw;line-height:.95;text-shadow:0 6px 20px rgba(0,0,0,.6);z-index:2}
+.p2 > svg{position:absolute;width:28%;bottom:7cqw}
+.p2 > svg:nth-of-type(1){left:9%;rotate:-14deg}.p2 > svg:nth-of-type(2){left:34%;width:32%;bottom:10cqw}.p2 > svg:nth-of-type(3){right:9%;rotate:14deg}
+.p3{background:radial-gradient(circle at 50% 80%,#3a220c,#0b0907 70%)}
+.p3 .big{position:absolute;left:8cqw;right:14cqw;top:9cqw;color:#fff;font-family:'Permanent Marker',cursive;font-size:6.4cqw;line-height:1.15}
+.p3 .big b{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:2.6em;color:var(--yellow);letter-spacing:1px;line-height:1;margin-top:1cqw}
+.p3 > svg{position:absolute;width:86%;left:7%;bottom:-6cqw;rotate:5deg}
+.p4{background:#1a1714}
+.p4 .big{position:absolute;left:7cqw;top:7cqw;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:14cqw;line-height:.92;color:var(--yellow)}
+.p4 > svg{position:absolute;width:64%;right:5%;bottom:5%}
+.p4 > .leaf{position:absolute;right:auto;left:62%;top:9cqw;width:18%;bottom:auto}
+.p5{background:#0b0907}
+.p5::before{content:"";position:absolute;background:#fff;width:62%;height:52%;right:-18%;top:-20%;border-radius:40% 60% 50% 50%}
+.p5 .chip-c{position:absolute;width:6cqw;aspect-ratio:1;background:#4a2d18;border-radius:40% 60% 50% 40%;z-index:1}
+.p5 .lbl{position:absolute;left:7cqw;top:7cqw;z-index:2;font-size:max(11px,2.8cqw);white-space:nowrap;font-weight:700;letter-spacing:.4cqw;text-transform:uppercase;background:#fff;color:#b8641f;padding:1.4cqw 3cqw;border-radius:999px}
+.p5 > svg{position:absolute;width:40%;right:10%;bottom:4%;z-index:2;rotate:8deg}
+.p5 .big{position:absolute;left:7cqw;bottom:8cqw;z-index:2;font-family:'Anton',sans-serif;color:#fff;font-size:11cqw;line-height:.95;text-transform:uppercase}
+.p5 .big span{color:var(--yellow)}
+.p6{background:linear-gradient(180deg,#14100c,#0b0907);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5%;text-align:center}
+.p6 .pill{background:var(--orange);color:var(--ink);font-family:'Anton',sans-serif;font-size:max(12px,3.6cqw);letter-spacing:.3cqw;padding:1.6cqw 3.6cqw;border-radius:2cqw;text-transform:uppercase}
+.p6 .q{font-family:'Anton',sans-serif;font-size:clamp(24px,9cqw,40px);line-height:1;text-transform:uppercase;margin:3cqw 0 4cqw;color:#fff}
+.poll{background:#fff;border-radius:4cqw;padding:3cqw;width:100%;display:grid;gap:2.2cqw}
+.poll button{width:100%;min-height:42px;text-align:left;padding:2.6cqw 4cqw;border-radius:999px;border:1.5px solid #e2dbcf;color:#2b2118;font-size:clamp(14px,4cqw,17px);font-weight:600;transition:.2s}
+.poll button:hover{border-color:var(--orange)}
+.poll button.sel{background:var(--yellow);border-color:var(--yellow)}
+.p6 .ans{min-height:1.4em;margin-top:3cqw;font-family:'Permanent Marker',cursive;color:var(--yellow);font-size:clamp(14px,4.4cqw,19px)}
+@container (max-width:300px){.p5 .lbl{display:none}.post .ig{display:none}.p5 .big{font-size:9.5cqw}.p5 > svg{width:36%;right:6%}.p2 .big{font-size:13cqw}}
+.follow{display:flex;align-items:center;gap:14px}
+.follow .av{width:54px;height:54px;flex:none}
+.follow b{overflow-wrap:anywhere;word-break:break-word}
+.follow > span{min-width:0}
+
+/* about */
+.about{background:var(--bg2);overflow-x:clip}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.polaroid{position:relative;background:#FBF6EA;padding:16px 16px 64px;border-radius:4px;rotate:-3deg;box-shadow:0 40px 70px -25px rgba(0,0,0,.8);max-width:540px;width:100%;justify-self:center}
+.polaroid::before{content:"";position:absolute;top:-16px;left:50%;width:130px;height:34px;margin-left:-65px;background:rgba(255,226,150,.7);rotate:3deg}
+.polaroid figcaption{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:'Permanent Marker',cursive;color:#2b2016;font-size:1.3rem}
+.note{position:absolute;right:-26px;bottom:40px;width:150px;padding:18px 14px;background:var(--yellow);color:var(--ink);font-family:'Permanent Marker',cursive;font-size:1.05rem;line-height:1.2;text-align:center;rotate:7deg;box-shadow:0 18px 30px -12px rgba(0,0,0,.6)}
+.note::before{content:"";position:absolute;top:-8px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--red);box-shadow:0 3px 4px rgba(0,0,0,.4)}
+.ab-text .big{font-size:1.12rem;color:#ddd3c2;margin:22px 0 32px}
+.ab-text .big b{color:var(--cream);font-weight:600}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pillar{padding:20px;border-radius:20px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.pillar .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--grad);color:var(--ink);margin-bottom:14px}
+.pillar .ic svg{width:22px;height:22px}
+.pillar h4{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.1rem;letter-spacing:.6px;line-height:1.1;margin-bottom:6px}
+.pillar p{color:var(--muted);font-size:.86rem;line-height:1.5}
+
+/* visit */
+.v-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}
+.v-card{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:34px;display:flex;flex-direction:column;gap:26px}
+.addr-big{font-family:'Anton',sans-serif;font-weight:400;font-size:2.3rem;line-height:1;text-transform:uppercase}
+.addr-big span{display:block;font-family:'Poppins',sans-serif;font-size:1rem;color:var(--muted);text-transform:none;margin-top:8px;font-weight:500}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:12px 0;border-bottom:1px dashed var(--line);font-size:1rem}
+.hours td:last-child{text-align:right;font-family:'Anton',sans-serif;font-size:1.25rem;letter-spacing:.5px}
+.hours tr.today td{color:var(--yellow)}
+.hours tr.today td:first-child::after{content:attr(data-today);margin-left:10px;font-family:'Poppins',sans-serif;font-size:.64rem;font-weight:700;background:var(--yellow);color:var(--ink);padding:3px 9px;border-radius:999px;vertical-align:middle;text-transform:uppercase;letter-spacing:1px}
+.perks{display:flex;flex-wrap:wrap;gap:8px}
+.perks span{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;padding:7px 13px;border-radius:999px;background:rgba(31,138,62,.16);color:#a6e6b9;border:1px solid rgba(31,138,62,.4)}
+.perks span::before{content:"✓";font-weight:800}
+.v-card .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto}
+.v-card .phone{font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:.5px;color:var(--text);display:inline-flex;align-items:center;gap:10px}
+.v-card .phone svg{width:22px;height:22px;color:var(--yellow)}
+.v-card .phone:hover{color:var(--yellow)}
+.map{position:relative;border-radius:30px;overflow:hidden;border:1px solid var(--line);min-height:460px;background:#1b1611}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.2) contrast(1.05)}
+.map .pin{position:absolute;left:18px;bottom:18px;z-index:2;display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:999px;background:rgba(13,11,9,.88);backdrop-filter:blur(8px);border:1px solid var(--line);font-size:.86rem;font-weight:600;pointer-events:none}
+.map .pin svg{width:40px;height:40px}
+
+/* final */
+.final{background:var(--red);padding:110px 0 120px;overflow:hidden;color:#fff}
+.final::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 56px,rgba(0,0,0,.08) 56px 112px)}
+.final::after{content:"";position:absolute;left:0;right:0;top:-21px;height:22px;background:radial-gradient(circle at 28px 22px,var(--red) 21px,transparent 22px) 0 0/56px 22px repeat-x}
+.f-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.final h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(3rem,7vw,6rem);line-height:.92}
+.final h2 em{display:block;font-family:'Lobster',cursive;text-transform:none;font-style:normal;color:var(--yellow);font-size:.9em;margin-top:6px}
+.final p{font-size:1.12rem;max-width:520px;margin:20px 0 32px;color:rgba(255,255,255,.88)}
+.f-logo{justify-self:center;width:100%;max-width:320px;rotate:8deg;filter:drop-shadow(0 30px 30px rgba(60,0,0,.5))}
+
+/* footer */
+footer{background:#000;padding:70px 0 28px;position:relative}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;margin-bottom:44px}
+.foot .brand svg{width:76px;height:76px}
+.foot .slogan{font-family:'Lobster',cursive;color:var(--yellow);font-size:1.35rem;margin-top:16px}
+.foot h5{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:1.5px;font-size:1rem;margin-bottom:14px;color:var(--yellow)}
+.foot p,.foot nav a{color:var(--muted);font-size:.93rem;display:block;line-height:1.9}
+.foot nav a:hover{color:var(--text)}
+.social{display:flex;gap:10px;margin-top:18px}
+.social a{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center}
+.social a:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.social svg{width:20px;height:20px}
+.legal{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.82rem;color:#7a705f}
+.legal a{color:var(--yellow);font-weight:600;display:inline-block;padding:6px 0}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:40;width:62px;height:62px;border-radius:50%;background:var(--grad);color:var(--ink);display:none;place-items:center;box-shadow:0 14px 30px -6px rgba(247,147,30,.75)}
+.fab svg{width:28px;height:28px}
+.fab::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--yellow);animation:ring 2s infinite}
+@keyframes ring{0%{opacity:.9;transform:scale(.9)}100%{opacity:0;transform:scale(1.35)}}
+
+/* reveal */
+.rv{opacity:0;translate:0 30px;transition:opacity .8s ease,translate .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;translate:0 0}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* responsive */
+@media (max-width:1040px){
+  .hero .wrap,.b-grid,.ab-grid,.v-grid,.f-grid{grid-template-columns:1fr}
+  .hero{padding:120px 0 120px;min-height:0}
+  .stage{max-width:520px}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .t-pastel{grid-row:span 1;min-height:520px}
+  .t-more{grid-column:span 2}
+  .ab-grid{gap:60px}
+  .foot{grid-template-columns:1fr 1fr}
+  .f-grid{text-align:center}
+  .final p{margin-left:auto;margin-right:auto}
+  .final .cta-row{justify-content:center}
+  .f-logo{grid-row:1;max-width:220px}
+  .ticket-col{margin-top:40px}
+}
+@media (max-width:820px){
+  .menu{position:fixed;top:118px;left:12px;right:12px;flex-direction:column;align-items:stretch;gap:0;background:rgba(18,14,10,.97);border:1px solid var(--line);border-radius:20px;padding:10px 20px 20px;transform:translateY(-10px);opacity:0;pointer-events:none;transition:.25s}
+  .nav.open .menu{transform:none;opacity:1;pointer-events:auto}
+  header.nav.open{background:rgba(13,11,9,.95)}
+  .menu a:not(.btn){padding:14px 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  .menu a:not(.btn)::after{display:none}
+  .menu .btn{margin-top:16px}
+  .burger{display:flex}
+  .fab{display:grid}
+  .topbar .addr{display:none}
+  .mural{grid-template-columns:repeat(2,1fr)}
+  .pillars{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .wrap{padding:0 18px}
+  .sec{padding:90px 0}
+  .nav .wrap{height:70px}
+  .hero{margin-top:-70px;padding:100px 0 100px}
+  .menu{top:108px}
+  .brand svg{width:50px;height:50px}
+  .brand-txt b{font-size:.95rem}
+  .cta-row .btn{flex:1 1 100%}
+  .fact b{font-size:1.6rem}
+  .fact + .fact{padding-left:12px}.fact{padding-right:12px}
+  .bento{grid-template-columns:1fr;grid-auto-rows:minmax(230px,auto)}
+  .t-pastel,.t-burger,.t-more{grid-column:auto}
+  .t-pastel{min-height:0;padding:26px;justify-content:flex-start}
+  .t-pastel .art{position:relative;width:100%;left:auto;top:auto;rotate:-6deg;margin:34px 0 18px}
+  .t-pastel:hover .art{transform:none}
+  .t-pastel h3{font-size:3.2rem}
+  .v-card .btns .btn{flex:1 1 100%}
+  .hours td{font-size:.92rem}
+  .hours td:last-child{font-size:1.1rem;white-space:nowrap;padding-left:10px}
+  .hours tr.today td:first-child::after{display:block;width:max-content;margin:4px 0 0}
+  .ticket{rotate:1deg}
+  .tk-pastel{right:-8px}
+  .menu{max-width:calc(100vw - 24px)}
+  .t-burger p{max-width:58%}
+  .stamp{width:86px;height:86px;font-size:.78rem;right:18px;top:18px}
+  .panel{padding:24px}
+  .tk-pastel{width:130px;right:-24px;top:-60px}
+  .ticket{padding:26px 22px 30px}
+  .mural{grid-template-columns:1fr 1fr;gap:10px}
+  .post{border-radius:16px}
+  .note{right:-6px;width:126px;font-size:.92rem}
+  .v-card{padding:24px}
+  .addr-big{font-size:1.9rem}
+  .map{min-height:340px}
+  .foot{grid-template-columns:1fr}
+  .tile{min-height:280px}
+  .t-cox .art{width:36%;right:6%;top:6%}
+  .t-cana .art{width:24%;right:10%;top:-8%}
+  .t-prato .art{width:46%;right:-6%;top:-12%}
+  .t-doce .art{width:30%;right:6%;top:2%}
+  .t-burger{min-height:300px}
+  .t-burger .art{width:46%;right:-2%;top:auto;bottom:6%;translate:none}
+  .t-burger p{max-width:52%}
+  .p6{grid-column:span 2;aspect-ratio:auto;padding:28px 22px}
+  .p1{grid-column:span 2}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;translate:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ======================= SVG LIBRARY ======================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <!-- pastel -->
+  <linearGradient id="gP" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6C766"/><stop offset=".6" stop-color="#E9A445"/><stop offset="1" stop-color="#C7772A"/></linearGradient>
+  <radialGradient id="gPin" cx=".42" cy=".38" r=".65"><stop offset="0" stop-color="#FFE9AE" stop-opacity=".85"/><stop offset="1" stop-color="#F3BC5C" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gBub" fx=".34" fy=".3" cx=".45" cy=".42" r=".62"><stop offset="0" stop-color="#FFF7DE"/><stop offset=".35" stop-color="#FBD887"/><stop offset=".8" stop-color="#E8A548"/><stop offset="1" stop-color="#C47A2A"/></radialGradient>
+  <linearGradient id="pEdge" x1="0" y1="0" x2="0" y2="1"><stop offset=".72" stop-color="#7A3A0C" stop-opacity="0"/><stop offset="1" stop-color="#7A3A0C" stop-opacity=".38"/></linearGradient>
+  <filter id="dough" x="-6%" y="-8%" width="112%" height="116%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="4" result="big"/>
+    <feDiffuseLighting in="big" surfaceScale="2.4" diffuseConstant="1" lighting-color="#fff" result="diff"><feDistantLight azimuth="235" elevation="60"/></feDiffuseLighting>
+    <feComposite in="diff" in2="SourceGraphic" operator="arithmetic" k1=".7" k2="0" k3=".38" k4="0" result="lit"/>
+    <feComposite in="lit" in2="SourceAlpha" operator="in" result="lit2"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="2" seed="2" result="warp"/>
+    <feDisplacementMap in="lit2" in2="warp" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <clipPath id="pClip"><path d="M38 64 C34 40 54 30 80 30 L318 26 C346 26 364 38 362 64 L366 168 C368 196 350 206 322 206 L78 206 C50 206 34 194 36 168 Z"/></clipPath>
+  <symbol id="pastel" viewBox="0 0 400 236">
+    <g filter="url(#dough)">
+      <path d="M38 64 C34 40 54 30 80 30 L318 26 C346 26 364 38 362 64 L366 168 C368 196 350 206 322 206 L78 206 C50 206 34 194 36 168 Z" fill="url(#gP)"/>
+      <path d="M38 64 C34 40 54 30 80 30 L318 26 C346 26 364 38 362 64 L366 168 C368 196 350 206 322 206 L78 206 C50 206 34 194 36 168 Z" fill="url(#gPin)"/>
+      <g clip-path="url(#pClip)">
+        <path d="M38 64 C34 40 54 30 80 30 L318 26 C346 26 364 38 362 64 L366 168 C368 196 350 206 322 206 L78 206 C50 206 34 194 36 168 Z" fill="none" stroke="#B3621E" stroke-width="30" stroke-dasharray="3.5 6.5" opacity=".42"/>
+        <path d="M38 64 C34 40 54 30 80 30 L318 26 C346 26 364 38 362 64 L366 168 C368 196 350 206 322 206 L78 206 C50 206 34 194 36 168 Z" fill="none" stroke="#9E5216" stroke-width="44" opacity=".14"/>
+        <g fill="#A85A18" opacity=".32"><circle cx="252" cy="156" r="7.6"/><circle cx="119" cy="99" r="9.0"/><circle cx="105" cy="88" r="4.6"/><circle cx="333" cy="162" r="4.0"/><circle cx="70" cy="134" r="12.2"/><circle cx="95" cy="113" r="9.3"/><circle cx="91" cy="56" r="5.4"/><circle cx="273" cy="105" r="4.0"/><circle cx="222" cy="119" r="5.4"/><circle cx="128" cy="124" r="3.4"/><circle cx="172" cy="72" r="2.6"/><circle cx="166" cy="170" r="12.1"/><circle cx="131" cy="57" r="2.6"/><circle cx="188" cy="92" r="6.4"/><circle cx="147" cy="142" r="3.4"/><circle cx="82" cy="119" r="2.2"/><circle cx="112" cy="138" r="3.0"/><circle cx="236" cy="91" r="2.2"/><circle cx="205" cy="62" r="3.4"/><circle cx="81" cy="92" r="7.6"/><circle cx="220" cy="147" r="4.0"/><circle cx="242" cy="142" r="7.6"/><circle cx="228" cy="67" r="5.4"/><circle cx="254" cy="96" r="4.6"/><circle cx="333" cy="66" r="7.6"/><circle cx="188" cy="134" r="9.3"/><circle cx="185" cy="113" r="2.2"/><circle cx="146" cy="89" r="10.4"/><circle cx="93" cy="131" r="2.2"/><circle cx="154" cy="124" r="2.2"/><circle cx="298" cy="70" r="4.0"/><circle cx="216" cy="129" r="2.6"/><circle cx="300" cy="111" r="11.2"/><circle cx="201" cy="104" r="4.6"/><circle cx="326" cy="112" r="2.2"/><circle cx="224" cy="140" r="2.6"/><circle cx="127" cy="113" r="6.4"/><circle cx="87" cy="152" r="2.6"/><circle cx="224" cy="183" r="3.4"/><circle cx="297" cy="176" r="6.4"/><circle cx="181" cy="56" r="5.4"/><circle cx="288" cy="89" r="6.4"/><circle cx="323" cy="182" r="3.0"/><circle cx="279" cy="124" r="2.6"/><circle cx="150" cy="182" r="3.0"/><circle cx="93" cy="181" r="3.4"/><circle cx="73" cy="76" r="5.4"/><circle cx="313" cy="78" r="3.0"/><circle cx="262" cy="63" r="9.9"/><circle cx="213" cy="182" r="4.6"/><circle cx="328" cy="172" r="2.2"/><circle cx="303" cy="134" r="9.0"/><circle cx="134" cy="169" r="4.0"/><circle cx="229" cy="84" r="2.6"/><circle cx="326" cy="141" r="7.6"/><circle cx="100" cy="133" r="2.6"/><circle cx="211" cy="106" r="2.6"/><circle cx="82" cy="178" r="4.6"/><circle cx="112" cy="166" r="7.6"/><circle cx="329" cy="95" r="9.0"/><circle cx="102" cy="63" r="4.6"/><circle cx="286" cy="156" r="4.0"/><circle cx="144" cy="121" r="2.6"/><circle cx="191" cy="151" r="2.6"/><circle cx="275" cy="180" r="2.6"/><circle cx="322" cy="123" r="3.4"/><circle cx="304" cy="74" r="2.2"/><circle cx="213" cy="68" r="3.0"/><circle cx="219" cy="99" r="3.0"/><circle cx="165" cy="57" r="2.6"/><circle cx="284" cy="105" r="3.0"/><circle cx="228" cy="171" r="2.6"/><circle cx="296" cy="151" r="4.0"/><circle cx="239" cy="107" r="6.4"/><circle cx="266" cy="131" r="4.6"/><circle cx="257" cy="113" r="4.6"/><circle cx="118" cy="124" r="4.6"/><circle cx="68" cy="161" r="3.4"/><circle cx="199" cy="170" r="6.4"/><circle cx="124" cy="171" r="3.0"/><circle cx="149" cy="55" r="3.0"/><circle cx="120" cy="79" r="7.6"/><circle cx="213" cy="56" r="3.0"/><circle cx="90" cy="175" r="2.2"/><circle cx="211" cy="83" r="5.4"/><circle cx="312" cy="174" r="3.0"/><circle cx="214" cy="159" r="7.6"/><circle cx="158" cy="105" r="3.0"/><circle cx="269" cy="162" r="9.0"/><circle cx="158" cy="115" r="4.0"/><circle cx="150" cy="156" r="6.4"/><circle cx="308" cy="153" r="5.4"/><circle cx="289" cy="59" r="2.2"/><circle cx="338" cy="172" r="3.4"/><circle cx="190" cy="73" r="9.9"/><circle cx="102" cy="178" r="4.6"/><circle cx="221" cy="108" r="4.0"/><circle cx="257" cy="145" r="2.2"/><circle cx="96" cy="82" r="2.2"/><circle cx="307" cy="91" r="3.4"/><circle cx="210" cy="139" r="2.2"/><circle cx="245" cy="179" r="6.4"/><circle cx="94" cy="163" r="3.0"/><circle cx="311" cy="59" r="9.0"/><circle cx="201" cy="148" r="4.6"/><circle cx="182" cy="146" r="2.2"/><circle cx="130" cy="68" r="2.6"/><circle cx="69" cy="171" r="2.2"/><circle cx="168" cy="101" r="3.0"/><circle cx="187" cy="102" r="2.2"/><circle cx="191" cy="157" r="2.6"/><circle cx="274" cy="82" r="3.0"/><circle cx="175" cy="114" r="2.6"/><circle cx="258" cy="78" r="4.0"/><circle cx="148" cy="106" r="3.0"/><circle cx="233" cy="120" r="4.0"/><circle cx="240" cy="167" r="4.6"/><circle cx="261" cy="178" r="2.6"/><circle cx="136" cy="179" r="3.4"/><circle cx="75" cy="63" r="3.4"/><circle cx="244" cy="61" r="4.6"/><circle cx="277" cy="73" r="3.0"/><circle cx="84" cy="73" r="2.2"/><circle cx="157" cy="141" r="3.0"/><circle cx="189" cy="119" r="2.2"/><circle cx="233" cy="131" r="2.2"/><circle cx="262" cy="138" r="2.6"/><circle cx="90" cy="77" r="2.2"/><circle cx="174" cy="90" r="3.4"/><circle cx="127" cy="143" r="9.5"/><circle cx="315" cy="104" r="3.0"/><circle cx="154" cy="68" r="2.6"/><circle cx="243" cy="79" r="4.6"/><circle cx="67" cy="101" r="4.0"/><circle cx="227" cy="152" r="2.6"/><circle cx="164" cy="126" r="2.2"/><circle cx="78" cy="151" r="5.4"/><circle cx="204" cy="112" r="3.0"/><circle cx="171" cy="143" r="5.4"/><circle cx="322" cy="81" r="4.6"/><circle cx="170" cy="62" r="3.0"/><circle cx="284" cy="122" r="2.2"/><circle cx="287" cy="69" r="3.0"/><circle cx="188" cy="164" r="3.0"/><circle cx="143" cy="128" r="2.6"/><circle cx="300" cy="84" r="4.0"/><circle cx="119" cy="58" r="3.0"/><circle cx="109" cy="67" r="2.2"/><circle cx="80" cy="113" r="2.6"/><circle cx="158" cy="76" r="4.0"/></g><g fill="url(#gBub)"><circle cx="250" cy="154" r="7.6"/><circle cx="117" cy="97" r="9.0"/><circle cx="103" cy="86" r="4.6"/><circle cx="331" cy="160" r="4.0"/><circle cx="68" cy="132" r="12.2"/><circle cx="94" cy="111" r="9.3"/><circle cx="89" cy="54" r="5.4"/><circle cx="272" cy="103" r="4.0"/><circle cx="221" cy="117" r="5.4"/><circle cx="127" cy="123" r="3.4"/><circle cx="170" cy="70" r="2.6"/><circle cx="165" cy="169" r="12.1"/><circle cx="130" cy="55" r="2.6"/><circle cx="187" cy="90" r="6.4"/><circle cx="146" cy="140" r="3.4"/><circle cx="80" cy="118" r="2.2"/><circle cx="111" cy="136" r="3.0"/><circle cx="235" cy="90" r="2.2"/><circle cx="204" cy="60" r="3.4"/><circle cx="80" cy="90" r="7.6"/><circle cx="218" cy="145" r="4.0"/><circle cx="240" cy="141" r="7.6"/><circle cx="226" cy="65" r="5.4"/><circle cx="253" cy="95" r="4.6"/><circle cx="332" cy="64" r="7.6"/><circle cx="187" cy="132" r="9.3"/><circle cx="183" cy="112" r="2.2"/><circle cx="144" cy="88" r="10.4"/><circle cx="92" cy="130" r="2.2"/><circle cx="152" cy="122" r="2.2"/><circle cx="297" cy="69" r="4.0"/><circle cx="214" cy="127" r="2.6"/><circle cx="298" cy="109" r="11.2"/><circle cx="199" cy="102" r="4.6"/><circle cx="325" cy="111" r="2.2"/><circle cx="222" cy="138" r="2.6"/><circle cx="126" cy="111" r="6.4"/><circle cx="86" cy="150" r="2.6"/><circle cx="223" cy="181" r="3.4"/><circle cx="296" cy="174" r="6.4"/><circle cx="180" cy="55" r="5.4"/><circle cx="287" cy="87" r="6.4"/><circle cx="321" cy="180" r="3.0"/><circle cx="277" cy="123" r="2.6"/><circle cx="148" cy="180" r="3.0"/><circle cx="92" cy="180" r="3.4"/><circle cx="72" cy="74" r="5.4"/><circle cx="311" cy="76" r="3.0"/><circle cx="261" cy="61" r="9.9"/><circle cx="211" cy="180" r="4.6"/><circle cx="326" cy="170" r="2.2"/><circle cx="302" cy="133" r="9.0"/><circle cx="133" cy="167" r="4.0"/><circle cx="227" cy="83" r="2.6"/><circle cx="324" cy="139" r="7.6"/><circle cx="99" cy="131" r="2.6"/><circle cx="210" cy="105" r="2.6"/><circle cx="81" cy="176" r="4.6"/><circle cx="111" cy="164" r="7.6"/><circle cx="328" cy="93" r="9.0"/><circle cx="101" cy="61" r="4.6"/><circle cx="285" cy="155" r="4.0"/><circle cx="142" cy="119" r="2.6"/><circle cx="190" cy="149" r="2.6"/><circle cx="273" cy="179" r="2.6"/><circle cx="321" cy="121" r="3.4"/><circle cx="303" cy="72" r="2.2"/><circle cx="211" cy="66" r="3.0"/><circle cx="217" cy="98" r="3.0"/><circle cx="164" cy="55" r="2.6"/><circle cx="282" cy="104" r="3.0"/><circle cx="226" cy="169" r="2.6"/><circle cx="294" cy="149" r="4.0"/><circle cx="237" cy="105" r="6.4"/><circle cx="264" cy="129" r="4.6"/><circle cx="255" cy="111" r="4.6"/><circle cx="116" cy="123" r="4.6"/><circle cx="67" cy="160" r="3.4"/><circle cx="198" cy="168" r="6.4"/><circle cx="123" cy="170" r="3.0"/><circle cx="147" cy="53" r="3.0"/><circle cx="119" cy="78" r="7.6"/><circle cx="212" cy="54" r="3.0"/><circle cx="88" cy="173" r="2.2"/><circle cx="210" cy="81" r="5.4"/><circle cx="311" cy="172" r="3.0"/><circle cx="213" cy="158" r="7.6"/><circle cx="156" cy="103" r="3.0"/><circle cx="267" cy="160" r="9.0"/><circle cx="157" cy="113" r="4.0"/><circle cx="149" cy="155" r="6.4"/><circle cx="306" cy="151" r="5.4"/><circle cx="287" cy="57" r="2.2"/><circle cx="336" cy="170" r="3.4"/><circle cx="188" cy="72" r="9.9"/><circle cx="101" cy="177" r="4.6"/><circle cx="219" cy="106" r="4.0"/><circle cx="255" cy="144" r="2.2"/><circle cx="95" cy="80" r="2.2"/><circle cx="305" cy="89" r="3.4"/><circle cx="209" cy="137" r="2.2"/><circle cx="244" cy="178" r="6.4"/><circle cx="93" cy="162" r="3.0"/><circle cx="310" cy="58" r="9.0"/><circle cx="199" cy="146" r="4.6"/><circle cx="180" cy="145" r="2.2"/><circle cx="129" cy="66" r="2.6"/><circle cx="67" cy="170" r="2.2"/><circle cx="166" cy="100" r="3.0"/><circle cx="186" cy="100" r="2.2"/><circle cx="190" cy="156" r="2.6"/><circle cx="273" cy="80" r="3.0"/><circle cx="174" cy="112" r="2.6"/><circle cx="257" cy="77" r="4.0"/><circle cx="147" cy="104" r="3.0"/><circle cx="231" cy="118" r="4.0"/><circle cx="238" cy="165" r="4.6"/><circle cx="260" cy="176" r="2.6"/><circle cx="134" cy="177" r="3.4"/><circle cx="73" cy="61" r="3.4"/><circle cx="243" cy="59" r="4.6"/><circle cx="276" cy="71" r="3.0"/><circle cx="83" cy="71" r="2.2"/><circle cx="156" cy="139" r="3.0"/><circle cx="188" cy="117" r="2.2"/><circle cx="231" cy="130" r="2.2"/><circle cx="261" cy="137" r="2.6"/><circle cx="88" cy="76" r="2.2"/><circle cx="172" cy="89" r="3.4"/><circle cx="126" cy="142" r="9.5"/><circle cx="314" cy="103" r="3.0"/><circle cx="153" cy="66" r="2.6"/><circle cx="242" cy="77" r="4.6"/><circle cx="66" cy="99" r="4.0"/><circle cx="226" cy="150" r="2.6"/><circle cx="163" cy="125" r="2.2"/><circle cx="76" cy="149" r="5.4"/><circle cx="202" cy="110" r="3.0"/><circle cx="170" cy="142" r="5.4"/><circle cx="321" cy="80" r="4.6"/><circle cx="169" cy="60" r="3.0"/><circle cx="283" cy="120" r="2.2"/><circle cx="285" cy="68" r="3.0"/><circle cx="187" cy="162" r="3.0"/><circle cx="142" cy="127" r="2.6"/><circle cx="298" cy="83" r="4.0"/><circle cx="117" cy="56" r="3.0"/><circle cx="108" cy="66" r="2.2"/><circle cx="79" cy="112" r="2.6"/><circle cx="157" cy="74" r="4.0"/></g>
+        <path d="M38 64 C34 40 54 30 80 30 L318 26 C346 26 364 38 362 64 L366 168 C368 196 350 206 322 206 L78 206 C50 206 34 194 36 168 Z" fill="url(#pEdge)"/>
+      </g>
+    </g>
+    <path d="M90 44 Q200 34 300 40" stroke="#FFF6DC" stroke-width="7" stroke-linecap="round" fill="none" opacity=".35"/>
+  </symbol>
+
+  <!-- coxinha -->
+  <radialGradient id="gC" cx=".38" cy=".58" r=".75"><stop offset="0" stop-color="#F4BC60"/><stop offset=".6" stop-color="#D88B32"/><stop offset="1" stop-color="#94501A"/></radialGradient>
+  <linearGradient id="gCsh" x1="0" y1="0" x2="1" y2="1"><stop offset=".5" stop-color="#5A2A08" stop-opacity="0"/><stop offset="1" stop-color="#5A2A08" stop-opacity=".5"/></linearGradient>
+  <filter id="crumb" x="-6%" y="-6%" width="112%" height="112%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.38" numOctaves="2" seed="3" result="n"/>
+    <feDiffuseLighting in="n" surfaceScale="2.2" diffuseConstant="1.2" lighting-color="#fff" result="d"><feDistantLight azimuth="235" elevation="45"/></feDiffuseLighting>
+    <feComposite in="d" in2="SourceGraphic" operator="arithmetic" k1="1.1" k2="0" k3="0.08" k4="0" result="lit"/>
+    <feComposite in="lit" in2="SourceAlpha" operator="in"/>
+  </filter>
+  <symbol id="coxinha" viewBox="0 0 240 260">
+    <g filter="url(#crumb)">
+      <path d="M120 20 C127 20 130 28 134 38 C144 62 168 94 184 124 C198 152 201 186 187 207 C171 231 147 240 120 240 C93 240 69 231 53 207 C39 186 42 152 56 124 C72 94 96 62 106 38 C110 28 113 20 120 20Z" fill="url(#gC)"/>
+      <path d="M120 20 C127 20 130 28 134 38 C144 62 168 94 184 124 C198 152 201 186 187 207 C171 231 147 240 120 240 C93 240 69 231 53 207 C39 186 42 152 56 124 C72 94 96 62 106 38 C110 28 113 20 120 20Z" fill="url(#gCsh)"/>
+    </g>
+    <ellipse cx="90" cy="150" rx="13" ry="42" transform="rotate(14 90 150)" fill="#FFE7B0" opacity=".2"/>
+  </symbol>
+
+  <!-- caldo de cana -->
+  <linearGradient id="gCana" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDF1A6"/><stop offset=".5" stop-color="#CDD765"/><stop offset="1" stop-color="#A3AF3A"/></linearGradient>
+  <linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".25" stop-color="#fff" stop-opacity=".05"/><stop offset=".8" stop-color="#fff" stop-opacity=".04"/><stop offset="1" stop-color="#fff" stop-opacity=".22"/></linearGradient>
+  <linearGradient id="gCane" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5C8F2A"/><stop offset=".5" stop-color="#8CC152"/><stop offset="1" stop-color="#4E7F25"/></linearGradient>
+  <symbol id="cana" viewBox="0 0 200 300">
+    <g transform="rotate(16 150 150)">
+      <rect x="136" y="0" width="20" height="230" rx="8" fill="url(#gCane)"/>
+      <path d="M136 60 h20 M136 124 h20 M136 188 h20" stroke="#3E6A1C" stroke-width="4"/>
+      <path d="M156 12 q26 -16 38 -4 q-18 4 -38 18z" fill="#9BCB5E"/>
+    </g>
+    <rect x="98" y="8" width="9" height="150" rx="4.5" fill="#D62828" transform="rotate(10 102 80)"/>
+    <rect x="101" y="8" width="3" height="150" fill="#fff" opacity=".45" transform="rotate(10 102 80)"/>
+    <path d="M44 100 L156 100 L148.5 274 Q147.5 284 135 284 L65 284 Q52.5 284 51.5 274Z" fill="url(#gCana)"/>
+    <path d="M44 100 q14 -8 28 0 t28 0 t28 0 t28 0 L156 112 L44 112Z" fill="#F6F8D6"/>
+    <g fill="#fff" opacity=".7"><circle cx="60" cy="104" r="2.5"/><circle cx="84" cy="102" r="1.8"/><circle cx="118" cy="105" r="2.2"/><circle cx="140" cy="103" r="1.6"/></g>
+    <g fill="#fff" stroke="#fff" stroke-opacity=".6" fill-opacity=".28" stroke-width="1.5">
+      <rect x="60" y="122" width="34" height="30" rx="6" transform="rotate(-12 77 137)"/>
+      <rect x="104" y="140" width="32" height="28" rx="6" transform="rotate(10 120 154)"/>
+      <rect x="70" y="176" width="28" height="26" rx="6" transform="rotate(6 84 189)"/>
+    </g>
+    <path d="M40 70 L160 70 L148 278 Q147 292 134 292 L66 292 Q53 292 52 278Z" fill="url(#gGlass)" stroke="rgba(255,255,255,.55)" stroke-width="2.5"/>
+    <path d="M52 86 L60 262" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".35"/>
+    <g fill="#fff" opacity=".55"><ellipse cx="140" cy="200" rx="2.2" ry="3.2"/><ellipse cx="146" cy="160" rx="1.8" ry="2.6"/><ellipse cx="138" cy="236" rx="2" ry="3"/><ellipse cx="64" cy="220" rx="1.6" ry="2.4"/></g>
+    <circle cx="152" cy="74" r="24" fill="#F6E658" stroke="#8BB833" stroke-width="6"/>
+    <g stroke="#E2CF3A" stroke-width="2"><path d="M152 54v40M132 74h40M138 60l28 28M166 60l-28 28"/></g>
+    <circle cx="152" cy="74" r="4" fill="#FFF7B0"/>
+  </symbol>
+
+  <!-- x-tudo -->
+  <linearGradient id="gBun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8C163"/><stop offset=".7" stop-color="#DB8B2B"/><stop offset="1" stop-color="#B9661F"/></linearGradient>
+  <linearGradient id="gBunB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B055"/><stop offset="1" stop-color="#C47524"/></linearGradient>
+  <linearGradient id="gPatty" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A3C18"/><stop offset="1" stop-color="#4A220C"/></linearGradient>
+  <linearGradient id="gLet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ED65E"/><stop offset="1" stop-color="#3F9A33"/></linearGradient>
+  <symbol id="burger" viewBox="0 0 300 260">
+    <path d="M36 196 L264 196 Q264 232 232 236 L68 236 Q36 232 36 196Z" fill="url(#gBunB)"/>
+    <g filter="url(#crumb)"><rect x="28" y="160" width="244" height="40" rx="20" fill="url(#gPatty)"/></g>
+    <path d="M26 150 L274 150 L270 164 Q262 166 258 172 Q254 188 246 188 Q238 188 236 174 Q232 166 214 166 L190 166 Q182 166 180 176 Q178 184 172 184 Q166 184 164 174 Q162 166 150 166 L104 166 Q94 166 92 180 Q90 194 82 194 Q74 194 72 180 Q70 166 58 166 L40 166 Q30 166 28 160 Z" fill="#FFC21A"/>
+    <path d="M26 150 L274 150 L272 157 L28 157Z" fill="#FFE07A" opacity=".7"/>
+    <g fill="#FFE36E"><circle cx="70" cy="196" r="3"/><circle cx="110" cy="200" r="3"/><circle cx="196" cy="198" r="3"/><circle cx="236" cy="200" r="3"/></g>
+    <g stroke="#F5C342" stroke-width="3" stroke-linecap="round"><path d="M44 200l-10 10M58 202l-6 14M244 200l10 10M256 198l14 6M150 202l-4 12"/></g>
+    <path d="M40 146 q16 -10 32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0" fill="none" stroke="#C0442E" stroke-width="10" stroke-linecap="round"/>
+    <ellipse cx="200" cy="140" rx="46" ry="14" fill="#fff"/>
+    <ellipse cx="206" cy="138" rx="15" ry="8" fill="#FFB31A"/>
+    <rect x="44" y="128" width="96" height="14" rx="7" fill="#E2412F"/>
+    <rect x="150" y="122" width="96" height="14" rx="7" fill="#E2412F" opacity=".9"/>
+    <path d="M22 118 q14 -14 28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 t28 0 L278 134 Q150 150 22 134Z" fill="url(#gLet)"/>
+    <path d="M34 116 Q34 34 150 30 Q266 34 266 116 Z" fill="url(#gBun)"/>
+    <ellipse cx="118" cy="56" rx="54" ry="12" fill="#fff" opacity=".22" transform="rotate(-6 118 56)"/>
+    <g fill="#FFF3D6"><ellipse cx="96" cy="66" rx="6" ry="3.4" transform="rotate(-24 96 66)"/><ellipse cx="140" cy="50" rx="6" ry="3.4"/><ellipse cx="186" cy="60" rx="6" ry="3.4" transform="rotate(22 186 60)"/><ellipse cx="120" cy="84" rx="6" ry="3.4" transform="rotate(10 120 84)"/><ellipse cx="166" cy="86" rx="6" ry="3.4" transform="rotate(-12 166 86)"/><ellipse cx="216" cy="90" rx="5.5" ry="3.2" transform="rotate(30 216 90)"/><ellipse cx="74" cy="92" rx="5.5" ry="3.2" transform="rotate(-30 74 92)"/></g>
+  </symbol>
+
+  <!-- prato feito -->
+  <radialGradient id="gPlate" cx=".5" cy=".45" r=".55"><stop offset=".78" stop-color="#F4F0E7"/><stop offset=".9" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9D2C3"/></radialGradient>
+  <radialGradient id="gBeans" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#A86C38"/><stop offset="1" stop-color="#6C3C17"/></radialGradient>
+  <radialGradient id="gChick" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#E08A3E"/><stop offset=".6" stop-color="#B55A1C"/><stop offset="1" stop-color="#7A3510"/></radialGradient>
+  <symbol id="prato" viewBox="0 0 260 260">
+    <circle cx="130" cy="134" r="122" fill="#000" opacity=".25"/>
+    <circle cx="130" cy="128" r="122" fill="url(#gPlate)"/>
+    <circle cx="130" cy="128" r="96" fill="#F7F3EA"/>
+    <g transform="translate(38 30)"><path d="M46 62 Q50 26 96 30 Q140 34 140 74 Q136 112 92 112 Q44 110 46 62Z" fill="#FFFFFF"/><g fill="#FFFFFF" stroke="#E6DFCF" stroke-width=".8"><ellipse cx="64" cy="70" rx="4.2" ry="1.9" transform="rotate(176 64 70)"/><ellipse cx="129" cy="81" rx="4.2" ry="1.9" transform="rotate(135 129 81)"/><ellipse cx="123" cy="96" rx="4.2" ry="1.9" transform="rotate(63 123 96)"/><ellipse cx="66" cy="64" rx="4.2" ry="1.9" transform="rotate(28 66 64)"/><ellipse cx="62" cy="116" rx="4.2" ry="1.9" transform="rotate(97 62 116)"/><ellipse cx="58" cy="85" rx="4.2" ry="1.9" transform="rotate(3 58 85)"/><ellipse cx="89" cy="69" rx="4.2" ry="1.9" transform="rotate(46 89 69)"/><ellipse cx="127" cy="76" rx="4.2" ry="1.9" transform="rotate(40 127 76)"/><ellipse cx="93" cy="82" rx="4.2" ry="1.9" transform="rotate(158 93 82)"/><ellipse cx="80" cy="83" rx="4.2" ry="1.9" transform="rotate(0 80 83)"/><ellipse cx="95" cy="92" rx="4.2" ry="1.9" transform="rotate(55 95 92)"/><ellipse cx="110" cy="88" rx="4.2" ry="1.9" transform="rotate(42 110 88)"/><ellipse cx="81" cy="126" rx="4.2" ry="1.9" transform="rotate(138 81 126)"/><ellipse cx="118" cy="72" rx="4.2" ry="1.9" transform="rotate(46 118 72)"/><ellipse cx="128" cy="81" rx="4.2" ry="1.9" transform="rotate(98 128 81)"/><ellipse cx="84" cy="113" rx="4.2" ry="1.9" transform="rotate(42 84 113)"/><ellipse cx="114" cy="85" rx="4.2" ry="1.9" transform="rotate(84 114 85)"/><ellipse cx="81" cy="119" rx="4.2" ry="1.9" transform="rotate(0 81 119)"/><ellipse cx="60" cy="75" rx="4.2" ry="1.9" transform="rotate(16 60 75)"/><ellipse cx="77" cy="122" rx="4.2" ry="1.9" transform="rotate(123 77 122)"/><ellipse cx="85" cy="77" rx="4.2" ry="1.9" transform="rotate(120 85 77)"/><ellipse cx="89" cy="84" rx="4.2" ry="1.9" transform="rotate(5 89 84)"/><ellipse cx="118" cy="85" rx="4.2" ry="1.9" transform="rotate(103 118 85)"/><ellipse cx="133" cy="96" rx="4.2" ry="1.9" transform="rotate(93 133 96)"/><ellipse cx="62" cy="115" rx="4.2" ry="1.9" transform="rotate(115 62 115)"/><ellipse cx="111" cy="96" rx="4.2" ry="1.9" transform="rotate(50 111 96)"/><ellipse cx="109" cy="104" rx="4.2" ry="1.9" transform="rotate(118 109 104)"/><ellipse cx="77" cy="110" rx="4.2" ry="1.9" transform="rotate(134 77 110)"/><ellipse cx="92" cy="116" rx="4.2" ry="1.9" transform="rotate(150 92 116)"/><ellipse cx="92" cy="60" rx="4.2" ry="1.9" transform="rotate(75 92 60)"/><ellipse cx="136" cy="100" rx="4.2" ry="1.9" transform="rotate(23 136 100)"/><ellipse cx="100" cy="117" rx="4.2" ry="1.9" transform="rotate(92 100 117)"/><ellipse cx="115" cy="82" rx="4.2" ry="1.9" transform="rotate(179 115 82)"/><ellipse cx="67" cy="86" rx="4.2" ry="1.9" transform="rotate(81 67 86)"/><ellipse cx="78" cy="122" rx="4.2" ry="1.9" transform="rotate(160 78 122)"/><ellipse cx="115" cy="116" rx="4.2" ry="1.9" transform="rotate(123 115 116)"/><ellipse cx="97" cy="99" rx="4.2" ry="1.9" transform="rotate(153 97 99)"/><ellipse cx="63" cy="87" rx="4.2" ry="1.9" transform="rotate(60 63 87)"/><ellipse cx="90" cy="71" rx="4.2" ry="1.9" transform="rotate(64 90 71)"/><ellipse cx="63" cy="98" rx="4.2" ry="1.9" transform="rotate(14 63 98)"/><ellipse cx="128" cy="88" rx="4.2" ry="1.9" transform="rotate(126 128 88)"/><ellipse cx="81" cy="106" rx="4.2" ry="1.9" transform="rotate(144 81 106)"/><ellipse cx="127" cy="83" rx="4.2" ry="1.9" transform="rotate(105 127 83)"/><ellipse cx="116" cy="107" rx="4.2" ry="1.9" transform="rotate(38 116 107)"/><ellipse cx="120" cy="100" rx="4.2" ry="1.9" transform="rotate(36 120 100)"/><ellipse cx="48" cy="102" rx="4.2" ry="1.9" transform="rotate(43 48 102)"/><ellipse cx="123" cy="88" rx="4.2" ry="1.9" transform="rotate(124 123 88)"/><ellipse cx="82" cy="73" rx="4.2" ry="1.9" transform="rotate(70 82 73)"/><ellipse cx="85" cy="114" rx="4.2" ry="1.9" transform="rotate(37 85 114)"/><ellipse cx="124" cy="113" rx="4.2" ry="1.9" transform="rotate(136 124 113)"/><ellipse cx="127" cy="85" rx="4.2" ry="1.9" transform="rotate(127 127 85)"/><ellipse cx="105" cy="81" rx="4.2" ry="1.9" transform="rotate(125 105 81)"/><ellipse cx="86" cy="124" rx="4.2" ry="1.9" transform="rotate(128 86 124)"/><ellipse cx="66" cy="116" rx="4.2" ry="1.9" transform="rotate(91 66 116)"/><ellipse cx="79" cy="64" rx="4.2" ry="1.9" transform="rotate(78 79 64)"/><ellipse cx="67" cy="115" rx="4.2" ry="1.9" transform="rotate(71 67 115)"/><ellipse cx="104" cy="76" rx="4.2" ry="1.9" transform="rotate(176 104 76)"/><ellipse cx="82" cy="58" rx="4.2" ry="1.9" transform="rotate(87 82 58)"/><ellipse cx="71" cy="70" rx="4.2" ry="1.9" transform="rotate(2 71 70)"/><ellipse cx="52" cy="97" rx="4.2" ry="1.9" transform="rotate(83 52 97)"/><ellipse cx="77" cy="70" rx="4.2" ry="1.9" transform="rotate(128 77 70)"/><ellipse cx="67" cy="66" rx="4.2" ry="1.9" transform="rotate(89 67 66)"/><ellipse cx="88" cy="113" rx="4.2" ry="1.9" transform="rotate(104 88 113)"/><ellipse cx="67" cy="119" rx="4.2" ry="1.9" transform="rotate(176 67 119)"/><ellipse cx="66" cy="99" rx="4.2" ry="1.9" transform="rotate(85 66 99)"/><ellipse cx="59" cy="89" rx="4.2" ry="1.9" transform="rotate(42 59 89)"/><ellipse cx="101" cy="113" rx="4.2" ry="1.9" transform="rotate(122 101 113)"/><ellipse cx="89" cy="102" rx="4.2" ry="1.9" transform="rotate(171 89 102)"/><ellipse cx="90" cy="77" rx="4.2" ry="1.9" transform="rotate(148 90 77)"/><ellipse cx="48" cy="88" rx="4.2" ry="1.9" transform="rotate(77 48 88)"/><ellipse cx="63" cy="70" rx="4.2" ry="1.9" transform="rotate(163 63 70)"/><ellipse cx="86" cy="128" rx="4.2" ry="1.9" transform="rotate(50 86 128)"/><ellipse cx="108" cy="112" rx="4.2" ry="1.9" transform="rotate(166 108 112)"/><ellipse cx="109" cy="120" rx="4.2" ry="1.9" transform="rotate(46 109 120)"/><ellipse cx="86" cy="87" rx="4.2" ry="1.9" transform="rotate(120 86 87)"/><ellipse cx="111" cy="90" rx="4.2" ry="1.9" transform="rotate(34 111 90)"/><ellipse cx="127" cy="115" rx="4.2" ry="1.9" transform="rotate(123 127 115)"/><ellipse cx="95" cy="98" rx="4.2" ry="1.9" transform="rotate(119 95 98)"/><ellipse cx="70" cy="116" rx="4.2" ry="1.9" transform="rotate(18 70 116)"/><ellipse cx="73" cy="83" rx="4.2" ry="1.9" transform="rotate(95 73 83)"/><ellipse cx="121" cy="92" rx="4.2" ry="1.9" transform="rotate(71 121 92)"/><ellipse cx="118" cy="66" rx="4.2" ry="1.9" transform="rotate(176 118 66)"/><ellipse cx="106" cy="73" rx="4.2" ry="1.9" transform="rotate(9 106 73)"/><ellipse cx="68" cy="86" rx="4.2" ry="1.9" transform="rotate(75 68 86)"/><ellipse cx="66" cy="86" rx="4.2" ry="1.9" transform="rotate(148 66 86)"/><ellipse cx="85" cy="113" rx="4.2" ry="1.9" transform="rotate(33 85 113)"/><ellipse cx="56" cy="108" rx="4.2" ry="1.9" transform="rotate(164 56 108)"/><ellipse cx="61" cy="86" rx="4.2" ry="1.9" transform="rotate(40 61 86)"/><ellipse cx="64" cy="77" rx="4.2" ry="1.9" transform="rotate(50 64 77)"/><ellipse cx="127" cy="86" rx="4.2" ry="1.9" transform="rotate(89 127 86)"/><ellipse cx="108" cy="66" rx="4.2" ry="1.9" transform="rotate(97 108 66)"/><ellipse cx="119" cy="109" rx="4.2" ry="1.9" transform="rotate(157 119 109)"/><ellipse cx="67" cy="87" rx="4.2" ry="1.9" transform="rotate(144 67 87)"/><ellipse cx="71" cy="109" rx="4.2" ry="1.9" transform="rotate(57 71 109)"/><ellipse cx="60" cy="93" rx="4.2" ry="1.9" transform="rotate(97 60 93)"/><ellipse cx="60" cy="114" rx="4.2" ry="1.9" transform="rotate(40 60 114)"/><ellipse cx="73" cy="82" rx="4.2" ry="1.9" transform="rotate(77 73 82)"/><ellipse cx="62" cy="93" rx="4.2" ry="1.9" transform="rotate(81 62 93)"/><ellipse cx="116" cy="85" rx="4.2" ry="1.9" transform="rotate(73 116 85)"/><ellipse cx="96" cy="96" rx="4.2" ry="1.9" transform="rotate(168 96 96)"/><ellipse cx="70" cy="75" rx="4.2" ry="1.9" transform="rotate(75 70 75)"/><ellipse cx="108" cy="95" rx="4.2" ry="1.9" transform="rotate(100 108 95)"/><ellipse cx="125" cy="94" rx="4.2" ry="1.9" transform="rotate(70 125 94)"/><ellipse cx="93" cy="117" rx="4.2" ry="1.9" transform="rotate(9 93 117)"/><ellipse cx="93" cy="111" rx="4.2" ry="1.9" transform="rotate(39 93 111)"/><ellipse cx="88" cy="73" rx="4.2" ry="1.9" transform="rotate(126 88 73)"/><ellipse cx="67" cy="76" rx="4.2" ry="1.9" transform="rotate(165 67 76)"/><ellipse cx="120" cy="66" rx="4.2" ry="1.9" transform="rotate(30 120 66)"/><ellipse cx="108" cy="93" rx="4.2" ry="1.9" transform="rotate(72 108 93)"/><ellipse cx="66" cy="88" rx="4.2" ry="1.9" transform="rotate(75 66 88)"/><ellipse cx="91" cy="86" rx="4.2" ry="1.9" transform="rotate(89 91 86)"/><ellipse cx="66" cy="116" rx="4.2" ry="1.9" transform="rotate(151 66 116)"/><ellipse cx="94" cy="93" rx="4.2" ry="1.9" transform="rotate(141 94 93)"/><ellipse cx="50" cy="101" rx="4.2" ry="1.9" transform="rotate(175 50 101)"/><ellipse cx="87" cy="91" rx="4.2" ry="1.9" transform="rotate(109 87 91)"/><ellipse cx="60" cy="75" rx="4.2" ry="1.9" transform="rotate(161 60 75)"/><ellipse cx="67" cy="65" rx="4.2" ry="1.9" transform="rotate(98 67 65)"/><ellipse cx="54" cy="97" rx="4.2" ry="1.9" transform="rotate(50 54 97)"/><ellipse cx="117" cy="77" rx="4.2" ry="1.9" transform="rotate(16 117 77)"/><ellipse cx="91" cy="94" rx="4.2" ry="1.9" transform="rotate(110 91 94)"/><ellipse cx="60" cy="78" rx="4.2" ry="1.9" transform="rotate(120 60 78)"/><ellipse cx="107" cy="85" rx="4.2" ry="1.9" transform="rotate(122 107 85)"/><ellipse cx="77" cy="60" rx="4.2" ry="1.9" transform="rotate(84 77 60)"/><ellipse cx="63" cy="86" rx="4.2" ry="1.9" transform="rotate(138 63 86)"/><ellipse cx="97" cy="83" rx="4.2" ry="1.9" transform="rotate(58 97 83)"/><ellipse cx="91" cy="102" rx="4.2" ry="1.9" transform="rotate(16 91 102)"/><ellipse cx="88" cy="87" rx="4.2" ry="1.9" transform="rotate(109 88 87)"/><ellipse cx="138" cy="87" rx="4.2" ry="1.9" transform="rotate(179 138 87)"/><ellipse cx="76" cy="93" rx="4.2" ry="1.9" transform="rotate(31 76 93)"/><ellipse cx="99" cy="120" rx="4.2" ry="1.9" transform="rotate(28 99 120)"/><ellipse cx="88" cy="79" rx="4.2" ry="1.9" transform="rotate(74 88 79)"/><ellipse cx="84" cy="69" rx="4.2" ry="1.9" transform="rotate(46 84 69)"/><ellipse cx="69" cy="77" rx="4.2" ry="1.9" transform="rotate(41 69 77)"/><ellipse cx="111" cy="99" rx="4.2" ry="1.9" transform="rotate(142 111 99)"/><ellipse cx="114" cy="106" rx="4.2" ry="1.9" transform="rotate(18 114 106)"/><ellipse cx="86" cy="119" rx="4.2" ry="1.9" transform="rotate(30 86 119)"/><ellipse cx="90" cy="58" rx="4.2" ry="1.9" transform="rotate(34 90 58)"/><ellipse cx="106" cy="93" rx="4.2" ry="1.9" transform="rotate(175 106 93)"/><ellipse cx="66" cy="77" rx="4.2" ry="1.9" transform="rotate(167 66 77)"/><ellipse cx="84" cy="98" rx="4.2" ry="1.9" transform="rotate(178 84 98)"/></g></g>
+    <path d="M52 150 Q54 120 96 124 Q134 128 128 162 Q122 192 86 190 Q50 186 52 150Z" fill="url(#gBeans)"/>
+    <g fill="#5A2E10"><ellipse cx="74" cy="150" rx="7" ry="4.5"/><ellipse cx="94" cy="140" rx="7" ry="4.5" transform="rotate(20 94 140)"/><ellipse cx="110" cy="160" rx="7" ry="4.5"/><ellipse cx="84" cy="170" rx="7" ry="4.5" transform="rotate(-20 84 170)"/><ellipse cx="66" cy="168" rx="6" ry="4"/><ellipse cx="104" cy="178" rx="6" ry="4"/></g>
+    <g fill="#fff" opacity=".35"><ellipse cx="72" cy="148" rx="2.5" ry="1.3"/><ellipse cx="92" cy="138" rx="2.5" ry="1.3"/><ellipse cx="108" cy="158" rx="2.5" ry="1.3"/></g>
+    <g filter="url(#crumb)"><path d="M138 132 Q150 104 182 112 Q208 124 198 152 Q188 176 158 170 Q132 162 138 132Z" fill="url(#gChick)"/><path d="M156 176 Q170 196 196 190 Q212 182 204 164 Q190 176 156 176Z" fill="url(#gChick)"/></g>
+    <path d="M150 128 Q164 116 184 124" stroke="#F0A65E" stroke-width="5" fill="none" stroke-linecap="round" opacity=".7"/>
+    <path d="M160 46 Q196 40 214 64 Q226 86 206 98 Q186 106 168 92 Q150 76 160 46Z" fill="#5DB94A"/>
+    <path d="M168 54 Q188 66 204 90" stroke="#8ED65E" stroke-width="3" fill="none"/>
+    <circle cx="214" cy="112" r="17" fill="#E2412F"/><circle cx="214" cy="112" r="10" fill="#F2705C"/><g fill="#FFD1C2"><circle cx="210" cy="108" r="1.6"/><circle cx="218" cy="110" r="1.6"/><circle cx="213" cy="117" r="1.6"/></g>
+    <circle cx="196" cy="128" r="13" fill="#E2412F"/><circle cx="196" cy="128" r="7" fill="#F2705C"/>
+    <ellipse cx="128" cy="200" rx="34" ry="13" fill="#E8C77F"/>
+    <g fill="#C49A4E"><circle cx="114" cy="200" r="2"/><circle cx="126" cy="196" r="2"/><circle cx="140" cy="202" r="2"/><circle cx="122" cy="206" r="1.8"/><circle cx="134" cy="208" r="1.6"/><circle cx="146" cy="197" r="1.6"/></g>
+  </symbol>
+
+  <!-- churros -->
+  <linearGradient id="gCh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A9581A"/><stop offset=".2" stop-color="#E1A04A"/><stop offset=".35" stop-color="#B8661F"/><stop offset=".5" stop-color="#E8AA52"/><stop offset=".65" stop-color="#B8661F"/><stop offset=".8" stop-color="#E1A04A"/><stop offset="1" stop-color="#A9581A"/></linearGradient>
+  <filter id="sugar" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="8" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 1 0 0 0 0 .97 0 0 0 0 .9 22 0 0 0 -15.6" result="s"/>
+    <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/>
+    <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="s2"/></feMerge>
+  </filter>
+  <symbol id="churros" viewBox="0 0 220 290">
+    <g filter="url(#sugar)">
+      <rect x="50" y="20" width="32" height="190" rx="16" fill="url(#gCh)" transform="rotate(-14 66 120)"/>
+      <rect x="94" y="4" width="32" height="200" rx="16" fill="url(#gCh)"/>
+      <rect x="138" y="22" width="32" height="190" rx="16" fill="url(#gCh)" transform="rotate(14 154 120)"/>
+    </g>
+    <path d="M36 140 L184 140 L150 282 L70 282 Z" fill="#EBD6B2"/>
+    <path d="M36 140 L184 140 L178 162 L42 162 Z" fill="#D7BB8B"/>
+    <path d="M78 168 L88 276 M110 168 V278 M142 168 L132 276" stroke="#CFB07E" stroke-width="2"/>
+    <path d="M60 196 h100" stroke="#D62828" stroke-width="10" opacity=".85"/>
+  </symbol>
+
+  <!-- salsa/folha -->
+  <symbol id="leaf" viewBox="0 0 100 100"><g fill="#4FA83A"><path d="M50 95 C40 70 20 60 10 40 C30 40 44 52 50 70 C52 40 62 22 82 10 C82 40 70 62 50 95Z"/></g><path d="M50 95 C52 70 60 40 80 14" stroke="#2F7A24" stroke-width="2" fill="none"/></symbol>
+
+  <!-- fachada -->
+  <pattern id="brick" width="40" height="20" patternUnits="userSpaceOnUse"><rect width="40" height="20" fill="#8E3A28"/><path d="M0 19.5h40M20 0v10M0 9.5h40M0 10v10M40 10v10" stroke="#6E2A1C" stroke-width="1.5"/></pattern>
+  <linearGradient id="gWin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE29A"/><stop offset="1" stop-color="#E9A23C"/></linearGradient>
+  <symbol id="fachada" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="#2A3A4C"/>
+    <rect x="0" y="0" width="400" height="300" fill="url(#brick)"/>
+    <rect x="70" y="12" width="260" height="72" rx="8" fill="#FBF5E6" stroke="#1F8A3E" stroke-width="6"/>
+    <circle cx="106" cy="48" r="26" fill="#FFC21A" stroke="#D62828" stroke-width="4"/>
+    <use href="#pastel" x="88" y="36" width="36" height="22"/>
+    <text x="224" y="50" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="25" fill="#1F8A3E" letter-spacing="2">PASTELARIA</text>
+    <text x="224" y="76" text-anchor="middle" font-family="Lobster,cursive" font-size="22" fill="#D62828">Vitória</text>
+    <path d="M24 100 L376 100 L396 158 L4 158 Z" fill="#D62828"/>
+    <g fill="#B81F1F"><path d="M58 100 L92 100 L96 158 L58 158Z"/><path d="M126 100 L160 100 L162 158 L126 158Z"/><path d="M194 100 L228 100 L228 158 L194 158Z"/><path d="M262 100 L296 100 L296 158 L262 158Z"/><path d="M330 100 L364 100 L370 158 L332 158Z"/></g>
+    <text x="200" y="140" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="28" fill="#fff" letter-spacing="3">PASTELARIA <tspan font-family="Lobster,cursive" letter-spacing="0" fill="#FFC21A">Vitória</tspan></text>
+    <path d="M4 158 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0 q12 15 24 0" fill="#C42222"/>
+    <rect x="22" y="176" width="356" height="124" fill="#4A1D13"/>
+    <rect x="30" y="182" width="206" height="118" fill="url(#gWin)"/>
+    <rect x="30" y="182" width="206" height="118" fill="#3a1a08" opacity=".18"/>
+    <g fill="#5A2A12" opacity=".55"><rect x="30" y="252" width="206" height="48"/><circle cx="80" cy="236" r="14"/><rect x="66" y="248" width="28" height="10" rx="5"/><circle cx="170" cy="232" r="13"/><rect x="157" y="244" width="26" height="12" rx="6"/></g>
+    <rect x="40" y="258" width="186" height="34" rx="6" fill="#FFC21A"/>
+    <use href="#pastel" x="46" y="262" width="44" height="26"/>
+    <use href="#coxinha" x="94" y="259" width="26" height="30"/>
+    <use href="#burger" x="124" y="261" width="36" height="28"/>
+    <use href="#cana" x="166" y="258" width="22" height="33"/>
+    <use href="#churros" x="194" y="259" width="26" height="32"/>
+    <path d="M44 188 L110 188 L56 296 L30 296Z" fill="#fff" opacity=".12"/>
+    <path d="M140 188 L176 188 L118 296 L92 296Z" fill="#fff" opacity=".08"/>
+    <rect x="252" y="182" width="118" height="118" fill="#1A1410"/>
+    <rect x="260" y="190" width="102" height="110" fill="#E6A64A" opacity=".55"/>
+    <rect x="270" y="200" width="66" height="26" rx="5" fill="#0d0b09"/>
+    <text x="303" y="219" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="700" font-size="14" fill="#5BFF8E">OPEN</text>
+    <rect x="270" y="200" width="66" height="26" rx="5" fill="none" stroke="#5BFF8E" stroke-width="1.5" opacity=".7"/>
+    <rect x="342" y="246" width="6" height="20" rx="3" fill="#C9A256"/>
+    <rect x="0" y="296" width="400" height="4" fill="#3a3a3a"/>
+  </symbol>
+
+  <!-- logo (redesenho vetorial) -->
+  <radialGradient id="gLogoIn" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#FFF27E"/><stop offset=".65" stop-color="#FFC21A"/><stop offset="1" stop-color="#F59A1B"/></radialGradient>
+  <linearGradient id="gLogoRing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD23F"/><stop offset=".5" stop-color="#F7931E"/><stop offset="1" stop-color="#D62828"/></linearGradient>
+  <symbol id="logo" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="99" fill="#FFFFFF"/>
+    <circle cx="100" cy="100" r="94" fill="none" stroke="#E9E2D3" stroke-width="1.5"/>
+    <path id="arcTop" d="M28 108 A72 72 0 0 1 172 108" fill="none"/>
+    <text font-family="Anton,Impact,sans-serif" font-size="25" letter-spacing="2.5" fill="#141414"><textPath href="#arcTop" startOffset="50%" text-anchor="middle">PASTELARIA</textPath></text>
+    <circle cx="100" cy="110" r="60" fill="url(#gLogoRing)"/>
+    <circle cx="100" cy="110" r="52" fill="url(#gLogoIn)"/>
+    <use href="#pastel" x="52" y="70" width="70" height="42" transform="rotate(-16 87 91)"/>
+    <use href="#pastel" x="80" y="78" width="70" height="42" transform="rotate(12 115 99)"/>
+    <path d="M10 140 L30 132 L30 166 L10 172 L20 156 Z" fill="#156B2F"/>
+    <path d="M190 140 L170 132 L170 166 L190 172 L180 156 Z" fill="#156B2F"/>
+    <path d="M24 126 Q100 112 176 126 L176 160 Q100 146 24 160 Z" fill="#1F8A3E"/>
+    <path d="M24 129 Q100 115 176 129" fill="none" stroke="#fff" stroke-width="1.6" opacity=".7"/>
+    <path d="M24 157 Q100 143 176 157" fill="none" stroke="#fff" stroke-width="1.6" opacity=".7"/>
+    <text x="100" y="152" text-anchor="middle" font-family="Lobster,cursive" font-size="33" fill="#FFFFFF">Vitória</text>
+    <text x="100" y="176" text-anchor="middle" font-family="Lobster,cursive" font-size="12" fill="#8A1C1C">Broadway</text>
+  </symbol>
+
+  <!-- ícones -->
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-9.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><path fill="currentColor" d="M21.7 11.3l-9-9a1 1 0 0 0-1.4 0l-9 9a1 1 0 0 0 0 1.4l9 9a1 1 0 0 0 1.4 0l9-9a1 1 0 0 0 0-1.4zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5z"/></symbol>
+  <symbol id="i-fire" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5.7s.7 2.6.7 4.7c0 2-1.3 3.6-3.3 3.6S7.4 7.4 7.4 5.4l.03-.36C5.5 7.4 4.3 10.4 4.3 13.7a7.7 7.7 0 0 0 15.4 0C19.7 7.4 16.7 3.8 13.5.7zM11.7 19.8c-1.7 0-3.1-1.4-3.1-3.1 0-1.6 1-2.7 2.7-3 1.8-.4 3.6-1.2 4.6-2.6.4 1.3.6 2.6.6 4 0 2.6-2.1 4.7-4.8 4.7z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H6.2M9 20.5h.01M17 20.5h.01"/></symbol>
+  <symbol id="flag-br" viewBox="0 0 30 20"><rect width="30" height="20" fill="#1F8A3E"/><path d="M15 2.5L27.5 10 15 17.5 2.5 10z" fill="#FFC21A"/><circle cx="15" cy="10" r="4.6" fill="#1B3F8F"/><path d="M10.6 9.2q4.4-1 8.8 1.4" stroke="#fff" stroke-width="1" fill="none"/></symbol>
+</defs>
+</svg>
+
+<!-- ======================= TOPO ======================= -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="status" id="status"><span class="dot"></span><span id="statusTxt">Pastelaria Vitória Broadway</span></span>
+    <div class="tb-right">
+      <a class="addr" href="https://www.google.com/maps/dir/?api=1&destination=192+Broadway+Somerville+MA+02145" target="_blank" rel="noopener">192 Broadway · Somerville, MA</a>
+      <a href="tel:+16177764303">(617)&nbsp;776&#8209;4303</a>
+      <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang="pt" class="on">PT</button><button type="button" data-lang="en">EN</button></div>
+    </div>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#inicio" class="brand" aria-label="Pastelaria Vitória Broadway">
+      <svg viewBox="0 0 200 200" role="img" aria-label="Logo Pastelaria Vitória"><use href="#logo"/></svg>
+      <span class="brand-txt"><b>PASTELARIA</b><span>Vitória Broadway</span></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <a href="#cardapio" data-i18n="nav1">Cardápio</a>
+      <a href="#monte" data-i18n="nav2">Monte seu pastel</a>
+      <a href="#insta" data-i18n="nav3">Instagram</a>
+      <a href="#visite" data-i18n="nav4">Como chegar</a>
+      <a href="tel:+16177764303" class="btn btn-primary"><svg><use href="#i-phone"/></svg><span data-i18n="navcta">Ligar agora</span></a>
+    </nav>
+    <button type="button" class="burger" id="menuBtn" aria-label="Menu" aria-controls="menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="inicio">
+  <div class="bg-word" aria-hidden="true">PASTEL</div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow rv"><svg aria-hidden="true"><use href="#flag-br"/></svg><span data-i18n="eyebrow">Um pedacinho do Brasil em Somerville</span></span>
+      <h1 class="rv d1">
+        <span class="l1" data-i18n="h1a">Não passe vontade,</span>
+        <span class="l2" data-i18n="h1b">passe na nossa</span>
+        <span class="l3" data-i18n="h1c">Pastelaria</span>
+      </h1>
+      <p class="lead rv d2" data-i18n="lead">Pastel grandão, crocante e <b>frito na hora</b>, com aquele cheirinho de feira de domingo. E ainda tem coxinha, X-tudo, comida caseira e caldo de cana, do café da manhã até a janta.</p>
+      <div class="cta-row rv d3">
+        <a href="tel:+16177764303" class="btn btn-primary"><svg><use href="#i-phone"/></svg><span data-i18n="cta1">Ligar e pedir</span></a>
+        <a href="#cardapio" class="btn btn-ghost"><span data-i18n="cta2">Ver o cardápio</span></a>
+      </div>
+      <div class="facts rv d4">
+        <div class="fact"><b data-i18n="fa1">6h</b><span data-i18n="fa2">abrimos cedinho, de seg. a sáb.</span></div>
+        <div class="fact"><b data-i18n="fb1">Na hora</b><span data-i18n="fb2">pediu, fritou, chegou quentinho</span></div>
+        <div class="fact"><b>192</b><span data-i18n="fc2">Broadway, Somerville, MA</span></div>
+      </div>
+    </div>
+
+    <div class="stage rv d2" aria-hidden="true">
+      <div class="ring"></div><div class="ring r2"></div>
+      <div class="paper"></div>
+      <svg class="p-back" viewBox="0 0 400 236"><use href="#pastel"/></svg>
+      <svg class="steam" viewBox="0 0 200 120"><path d="M50 110 q-16 -22 0 -44 t0 -44"/><path d="M100 110 q-16 -22 0 -44 t0 -44"/><path d="M150 110 q-16 -22 0 -44 t0 -44"/></svg>
+      <svg class="p-main" viewBox="0 0 400 236"><use href="#pastel"/></svg>
+      <svg class="p-cana" viewBox="0 0 200 300"><use href="#cana"/></svg>
+      <svg class="p-cox" viewBox="0 0 240 260"><use href="#coxinha"/></svg>
+      <div class="seal">
+        <svg class="spin" viewBox="0 0 200 200"><defs><path id="sealc" d="M100 100 m-82 0 a82 82 0 1 1 164 0 a82 82 0 1 1 -164 0"/></defs><text><textPath href="#sealc" textLength="508" lengthAdjust="spacing" data-i18n="sealtxt">MAIS QUE ALIMENTOS ✦ BONS MOMENTOS ✦ FRITO NA HORA ✦</textPath></text></svg>
+        <div class="core"><span data-i18n="seal">Frito<br>na hora<small>sempre!</small></span></div>
+      </div>
+      <i class="spark" style="left:62%;top:14%"></i><i class="spark" style="left:88%;top:52%;animation-delay:1s"></i><i class="spark" style="left:30%;top:80%;animation-delay:1.8s"></i><i class="spark" style="left:12%;top:44%;animation-delay:.6s"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CARDÁPIO ======================= -->
+<section class="sec" id="cardapio">
+  <div class="wrap">
+    <div class="head">
+      <div class="rv">
+        <span class="kicker" data-i18n="mk">Os queridinhos da casa</span>
+        <h2 class="h2" data-i18n="mh">Bateu a fome?<br><em>Escolhe aí.</em></h2>
+      </div>
+      <p class="rv d1" data-i18n="mp">Do salgado clássico ao prato feito com gostinho de casa. Tudo com receita brasileira de verdade, preparado na hora.</p>
+    </div>
+
+    <div class="bento">
+      <article class="tile t-pastel rv">
+        <svg class="art" viewBox="0 0 400 236" aria-hidden="true"><use href="#pastel"/></svg>
+        <span class="tag" data-i18n="tg1">O carro-chefe</span>
+        <div class="stamp" data-i18n="stamp">Frito<br>na<br>hora</div>
+        <h3 data-i18n="t1h">Pastéis</h3>
+        <p data-i18n="t1p">Grandão, crocante e recheado de verdade. Do clássico frango com catupiry ao camarão com queijo. E tem os doces também.</p>
+        <div class="flv">
+          <span data-i18n="f1">Frango c/ catupiry</span><span data-i18n="f2">Camarão c/ queijo</span><span data-i18n="f3">Palmito</span><span>Pizza</span><span data-i18n="f4">Carne</span><span data-i18n="f5">Banana c/ açúcar</span><span>Nutella</span>
+        </div>
+      </article>
+
+      <article class="tile t-cox rv d1">
+        <svg class="art" viewBox="0 0 240 260" aria-hidden="true"><use href="#coxinha"/></svg>
+        <div class="shade"></div>
+        <span class="tag" data-i18n="tg2">Frita na hora</span>
+        <h3>Coxinha</h3>
+        <p data-i18n="t2p">Casquinha crocante, frango cremoso por dentro.</p>
+      </article>
+
+      <article class="tile t-cana rv d2">
+        <svg class="art" viewBox="0 0 200 300" aria-hidden="true"><use href="#cana"/></svg>
+        <span class="tag" data-i18n="tg3">Geladinho</span>
+        <h3 data-i18n="t3h">Caldo de cana</h3>
+        <p data-i18n="t3p">O parceiro oficial do pastel. Tem suco natural também.</p>
+      </article>
+
+      <article class="tile t-burger rv">
+        <svg class="art" viewBox="0 0 300 260" aria-hidden="true"><use href="#burger"/></svg>
+        <span class="tag" data-i18n="tg4">Pra matar a fome</span>
+        <h3>X-Tudo</h3>
+        <p data-i18n="t4p">Pão, hambúrguer, queijo, presunto, ovo, bacon, alface, tomate, batata palha e milho. Precisa dizer mais?</p>
+      </article>
+
+      <article class="tile t-prato rv">
+        <svg class="art" viewBox="0 0 260 260" aria-hidden="true"><use href="#prato"/></svg>
+        <div class="shade"></div>
+        <span class="tag" data-i18n="tg5">Sabor de casa</span>
+        <h3 data-i18n="t5h">Comida caseira</h3>
+        <p data-i18n="t5p">Arroz, feijão, salada, farofa e uma mistura caprichada.</p>
+      </article>
+
+      <article class="tile t-doce rv d1">
+        <svg class="art" viewBox="0 0 220 290" aria-hidden="true"><use href="#churros"/></svg>
+        <div class="shade"></div>
+        <span class="tag" data-i18n="tg6">Sabor de infância</span>
+        <h3 data-i18n="t6h">Doces</h3>
+        <p data-i18n="t6p">Churros quentinhos, bolo de chocolate e brigadeiro.</p>
+      </article>
+
+      <article class="tile t-more rv d2">
+        <span class="marker" data-i18n="mm">E tem mais!</span>
+        <p data-i18n="mmp">Pão de queijo, salgados, sanduíches e um <b>mercadinho com produtos do Brasil</b>. Cardápio completo e preços no balcão ou pelo telefone.</p>
+        <a href="tel:+16177764303" class="btn btn-primary"><svg><use href="#i-phone"/></svg><span data-i18n="mmc">Consultar cardápio</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= MONTE SEU PASTEL ======================= -->
+<section class="sec builder" id="monte">
+  <div class="wrap">
+    <div class="head">
+      <div class="rv">
+        <span class="kicker" data-i18n="bk">Aqui quem manda é você</span>
+        <h2 class="h2" data-i18n="bh">Monte o seu <em>pastel</em></h2>
+      </div>
+      <p class="rv d1" data-i18n="bp">Escolhe até 3 recheios e veja sua comanda sair. Depois é só ligar que a gente frita na hora.</p>
+    </div>
+
+    <div class="b-grid">
+      <div class="panel rv">
+        <h3 data-i18n="bt">Escolha os recheios</h3>
+        <p class="hint" data-i18n="bhint">Toque para adicionar ou remover (máx. 3).</p>
+        <div class="grp">
+          <small data-i18n="g1">Salgados</small>
+          <div class="fills">
+            <button type="button" class="fill" aria-pressed="false" data-pt="Queijo" data-en="Cheese"><i style="background:#FFE27A"></i><span>Queijo</span></button>
+            <button type="button" class="fill" aria-pressed="false" data-pt="Frango" data-en="Chicken"><i style="background:#F2C18A"></i><span>Frango</span></button>
+            <button type="button" class="fill" aria-pressed="false" data-pt="Catupiry" data-en="Catupiry"><i style="background:#FFF6E4"></i><span>Catupiry</span></button>
+            <button type="button" class="fill" aria-pressed="false" data-pt="Carne" data-en="Beef"><i style="background:#8A4A26"></i><span>Carne</span></button>
+            <button type="button" class="fill" aria-pressed="false" data-pt="Camarão" data-en="Shrimp"><i style="background:#FF9A76"></i><span>Camarão</span></button>
+            <button type="button" class="fill" aria-pressed="false" data-pt="Palmito" data-en="Hearts of palm"><i style="background:#F3EBC9"></i><span>Palmito</span></button>
+            <button type="button" class="fill" aria-pressed="false" data-pt="Pizza" data-en="Pizza"><i style="background:#E2412F"></i><span>Pizza</span></button>
+          </div>
+        </div>
+        <div class="grp">
+          <small data-i18n="g2">Doces</small>
+          <div class="fills">
+            <button type="button" class="fill" aria-pressed="false" data-pt="Banana c/ açúcar" data-en="Banana &amp; sugar"><i style="background:#FFE45C"></i><span>Banana c/ açúcar</span></button>
+            <button type="button" class="fill" aria-pressed="false" data-pt="Nutella" data-en="Nutella"><i style="background:#5A2E14"></i><span>Nutella</span></button>
+          </div>
+        </div>
+        <div class="sugg">
+          <small data-i18n="sg">Sem ideia? Vai de clássico:</small>
+          <div class="sugg-list">
+            <button type="button" data-combo="Frango,Catupiry" data-i18n="sg1">Frango + Catupiry</button>
+            <button type="button" data-combo="Camarão,Queijo" data-i18n="sg2">Camarão + Queijo</button>
+            <button type="button" data-combo="Carne,Queijo" data-i18n="sg3">Carne + Queijo</button>
+            <button type="button" data-combo="Banana c/ açúcar" data-i18n="sg4">Banana c/ açúcar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket-col rv d1">
+        <div class="ticket">
+          <svg class="tk-pastel" id="tkPastel" viewBox="0 0 400 236" aria-hidden="true"><use href="#pastel"/></svg>
+          <div class="tk-head"><b>PASTELARIA</b><span>Vitória Broadway</span><small>192 Broadway · Somerville, MA</small></div>
+          <hr class="tk-hr">
+          <div class="tk-row"><span data-i18n="tkn">COMANDA Nº 0192</span><span id="tkDate">--/--</span></div>
+          <hr class="tk-hr">
+          <div class="tk-row big"><span data-i18n="tk1">1x PASTEL GRANDÃO</span><span>✔</span></div>
+          <div class="tk-items" id="tkItems"></div>
+          <hr class="tk-hr">
+          <div class="tk-row"><span data-i18n="tk2">Frito na hora</span><span>✔</span></div>
+          <div class="tk-row"><span data-i18n="tk3">Feito com carinho</span><span>✔</span></div>
+          <hr class="tk-hr">
+          <div class="tk-row big"><span data-i18n="tk4">FELICIDADE</span><span>100%</span></div>
+          <div class="tk-msg" id="tkMsg"></div>
+        </div>
+        <a href="tel:+16177764303" class="btn btn-ink"><svg><use href="#i-phone"/></svg><span data-i18n="bcta">Ligar e pedir o meu</span></a>
+        <p class="b-note" data-i18n="bnote">Sabores conforme a disponibilidade do dia. Pergunte também pelo Pastel Vitória, o queridinho da casa!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= INSTAGRAM ======================= -->
+<section class="sec" id="insta">
+  <div class="wrap">
+    <div class="head">
+      <div class="rv">
+        <span class="kicker" data-i18n="ik">Direto do nosso Insta</span>
+        <h2 class="h2" data-i18n="ih">Segue a gente e <em>passa vontade</em></h2>
+      </div>
+      <a class="follow rv d1" href="https://www.instagram.com/pastelaria_vitoria_broadway/" target="_blank" rel="noopener">
+        <svg class="av" viewBox="0 0 200 200" aria-hidden="true"><use href="#logo"/></svg>
+        <span><b style="display:block">@pastelaria_vitoria_broadway</b><span class="btn btn-ghost" style="padding:8px 18px;margin-top:6px;font-size:.85rem"><svg><use href="#i-ig"/></svg><span data-i18n="ifollow">Seguir</span></span></span>
+      </a>
+    </div>
+
+    <div class="mural">
+      <a class="post p1 rv" href="https://www.instagram.com/pastelaria_vitoria_broadway/" target="_blank" rel="noopener">
+        <div class="stack"><span>Sabadou</span><span>Sabadou</span><span>Sabadou</span></div>
+        <div class="txt" data-i18n="po1">E nada melhor que um pastel da Pastelaria Vitória pra alegrar o seu dia!</div>
+        <svg viewBox="0 0 400 236" aria-hidden="true"><use href="#pastel"/></svg>
+        <span class="ig"><svg><use href="#i-ig"/></svg></span>
+      </a>
+      <a class="post p2 rv d1" href="https://www.instagram.com/pastelaria_vitoria_broadway/" target="_blank" rel="noopener">
+        <div class="big" data-i18n="po2">Coxinha<br>frita na<br>hora!</div>
+        <svg viewBox="0 0 240 260" aria-hidden="true"><use href="#coxinha"/></svg>
+        <svg viewBox="0 0 240 260" aria-hidden="true"><use href="#coxinha"/></svg>
+        <svg viewBox="0 0 240 260" aria-hidden="true"><use href="#coxinha"/></svg>
+        <span class="ig"><svg><use href="#i-ig"/></svg></span>
+      </a>
+      <a class="post p3 rv d2" href="https://www.instagram.com/pastelaria_vitoria_broadway/" target="_blank" rel="noopener">
+        <div class="big" data-i18n="po3">Um amor chamado<b>PASTEL</b></div>
+        <svg viewBox="0 0 400 236" aria-hidden="true"><use href="#pastel"/></svg>
+        <span class="ig"><svg><use href="#i-ig"/></svg></span>
+      </a>
+      <a class="post p4 rv" href="https://www.instagram.com/pastelaria_vitoria_broadway/" target="_blank" rel="noopener">
+        <div class="big" data-i18n="po4">Comida<br>caseira</div>
+        <svg class="leaf" viewBox="0 0 100 100" aria-hidden="true"><use href="#leaf"/></svg>
+        <svg viewBox="0 0 260 260" aria-hidden="true"><use href="#prato"/></svg>
+        <span class="ig"><svg><use href="#i-ig"/></svg></span>
+      </a>
+      <a class="post p5 rv d1" href="https://www.instagram.com/pastelaria_vitoria_broadway/" target="_blank" rel="noopener">
+        <span class="lbl" data-i18n="po5a">Doce com sabor de infância</span>
+        <i class="chip-c" style="left:12%;top:30%"></i><i class="chip-c" style="left:46%;top:36%;rotate:40deg"></i><i class="chip-c" style="left:28%;top:46%;width:4cqw"></i><i class="chip-c" style="left:58%;top:22%;width:4cqw"></i><i class="chip-c" style="left:86%;top:46%;width:5cqw"></i>
+        <svg viewBox="0 0 220 290" aria-hidden="true"><use href="#churros"/></svg>
+        <div class="big" data-i18n="po5">Churros<br><span>quentinhos?</span></div>
+        <span class="ig"><svg><use href="#i-ig"/></svg></span>
+      </a>
+      <div class="post p6 rv d2">
+        <span class="pill" data-i18n="po6a">Enquete da fome</span>
+        <div class="q" data-i18n="po6">Hoje é dia de:</div>
+        <div class="poll" id="poll">
+          <button type="button" data-i18n="pl1">Pastel</button>
+          <button type="button" data-i18n="pl2">Coxinha</button>
+          <button type="button" data-i18n="pl3">Tudo junto e misturado</button>
+        </div>
+        <div class="ans" id="pollAns"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= NOSSA CASA ======================= -->
+<section class="sec about" id="sobre">
+  <div class="wrap ab-grid">
+    <div style="position:relative" class="rv">
+      <figure class="polaroid">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Fachada da Pastelaria Vitória na Broadway"><use href="#fachada"/></svg>
+        <figcaption>192 Broadway ♥</figcaption>
+      </figure>
+      <div class="note" data-i18n="note">Abre cedinho! 6h de seg. a sáb.</div>
+    </div>
+    <div class="ab-text">
+      <span class="kicker rv" data-i18n="ak">Um pedacinho do Brasil nos EUA</span>
+      <h2 class="h2 rv d1" data-i18n="ah">Mais que alimentos, <em>bons momentos.</em></h2>
+      <p class="big rv d2" data-i18n="ap">Na Pastelaria Vitória, o pastel sai da fritadeira direto pras suas mãos. É lanchonete, é cozinha caseira, é mercadinho brasileiro, <b>tudo no mesmo endereço</b>, em plena Broadway de Somerville. Pra quem está longe de casa, é um abraço em forma de comida. Pra quem nunca foi ao Brasil, é o melhor jeito de começar.</p>
+      <div class="pillars">
+        <div class="pillar rv"><div class="ic"><svg><use href="#i-fire"/></svg></div><h4 data-i18n="p1t">Frito na hora</h4><p data-i18n="p1p">Nada de pastel parado no balcão.</p></div>
+        <div class="pillar rv d1"><div class="ic"><svg><use href="#i-home"/></svg></div><h4 data-i18n="p2t">Sabor de casa</h4><p data-i18n="p2p">Tempero brasileiro do café à janta.</p></div>
+        <div class="pillar rv d2"><div class="ic"><svg><use href="#i-cart"/></svg></div><h4 data-i18n="p3t">Mercadinho</h4><p data-i18n="p3p">Os produtos do Brasil que fazem falta.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= VISITE ======================= -->
+<section class="sec" id="visite">
+  <div class="wrap">
+    <div class="head">
+      <div class="rv">
+        <span class="kicker" data-i18n="vk">Vem com fome</span>
+        <h2 class="h2" data-i18n="vh">Estamos na <em>Broadway</em>,<br>a de Somerville.</h2>
+      </div>
+      <p class="rv d1" data-i18n="vp">Pertinho de Winter Hill e East Somerville. Come aqui, leva pra viagem ou pede por telefone.</p>
+    </div>
+    <div class="v-grid">
+      <div class="v-card rv">
+        <div class="addr-big">192 Broadway<span>Somerville, MA 02145 · United States</span></div>
+        <a class="phone" href="tel:+16177764303"><svg><use href="#i-phone"/></svg>(617)&nbsp;776&#8209;4303</a>
+        <table class="hours" id="hours"><tbody>
+          <tr data-days="1,2,3,4,5,6"><td data-i18n="h1d">Segunda a Sábado</td><td data-i18n="h1h">6h – 22h</td></tr>
+          <tr data-days="0"><td data-i18n="h2d">Domingo</td><td data-i18n="h2h">7h – 17h</td></tr>
+        </tbody></table>
+        <div class="perks"><span data-i18n="k1">Comer no local</span><span data-i18n="k2">Para viagem</span><span>Delivery</span><span data-i18n="k3">Aceita cartão</span></div>
+        <div class="btns">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=192+Broadway+Somerville+MA+02145" target="_blank" rel="noopener" class="btn btn-primary"><svg><use href="#i-route"/></svg><span data-i18n="vroute">Traçar rota</span></a>
+          <a href="https://www.instagram.com/pastelaria_vitoria_broadway/" target="_blank" rel="noopener" class="btn btn-ghost"><svg><use href="#i-ig"/></svg>Instagram</a>
+        </div>
+      </div>
+      <div class="map rv d1">
+        <iframe title="Mapa: Pastelaria Vitória Broadway, 192 Broadway, Somerville MA" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Pastelaria%20Vitoria%20Broadway%2C%20192%20Broadway%2C%20Somerville%2C%20MA%2002145&z=16&output=embed"></iframe>
+        <div class="pin"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#logo"/></svg><span>Pastelaria Vitória · 192 Broadway</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CTA FINAL ======================= -->
+<section class="final">
+  <div class="wrap f-grid">
+    <div class="rv">
+      <h2 data-i18n="fh">Bateu a fome?<em>Vem pra Vitória!</em></h2>
+      <p data-i18n="fp">Liga, pede e passa pra buscar. Ou chega aí e escolhe na hora. Pastel quentinho te esperando na 192 Broadway.</p>
+      <div class="cta-row">
+        <a href="tel:+16177764303" class="btn btn-white"><svg><use href="#i-phone"/></svg>(617)&nbsp;776&#8209;4303</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=192+Broadway+Somerville+MA+02145" target="_blank" rel="noopener" class="btn btn-ghost" style="border-color:rgba(255,255,255,.5)"><svg><use href="#i-pin"/></svg><span data-i18n="cta3">Como chegar</span></a>
+      </div>
+    </div>
+    <svg class="f-logo rv d1" viewBox="0 0 200 200" aria-hidden="true"><use href="#logo"/></svg>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#inicio" class="brand"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#logo"/></svg><span class="brand-txt"><b>PASTELARIA</b><span>Vitória Broadway</span></span></a>
+        <p class="slogan" data-i18n="slogan">Mais que alimentos, bons momentos!</p>
+        <div class="social">
+          <a href="https://www.instagram.com/pastelaria_vitoria_broadway/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="tel:+16177764303" aria-label="Telefone"><svg><use href="#i-phone"/></svg></a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=192+Broadway+Somerville+MA+02145" target="_blank" rel="noopener" aria-label="Mapa"><svg><use href="#i-pin"/></svg></a>
+        </div>
+      </div>
+      <div><h5 data-i18n="fe">Endereço</h5><p>192 Broadway</p><p>Somerville, MA 02145</p><p>(617)&nbsp;776&#8209;4303</p></div>
+      <div><h5 data-i18n="fho">Horários</h5><p data-i18n="fh1">Seg a Sáb: 6h às 22h</p><p data-i18n="fh2">Domingo: 7h às 17h</p></div>
+      <div><h5 data-i18n="fnav">Navegue</h5><nav aria-label="Rodapé">
+        <a href="#cardapio" data-i18n="nav1">Cardápio</a><a href="#monte" data-i18n="nav2">Monte seu pastel</a><a href="#insta">Instagram</a><a href="#visite" data-i18n="nav4">Como chegar</a>
+      </nav></div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr">2026</span> Pastelaria Vitória Broadway</span>
+      <span>Feito por <a href="https://www.instagram.com/digitalbeyond.co/" target="_blank" rel="noopener">Digital Beyond</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+16177764303" class="fab" aria-label="Ligar para a Pastelaria Vitória"><svg><use href="#i-phone"/></svg></a>
+
+<script>
+(function(){
+  var EN={
+    nav1:"Menu",nav2:"Build your pastel",nav3:"Instagram",nav4:"Find us",navcta:"Call now",
+    eyebrow:"A little piece of Brazil in Somerville",
+    h1a:"Don't just crave it,",h1b:"come to our",h1c:"Pastelaria",
+    lead:"Big, crispy pastel <b>fried to order</b>, with that Brazilian street-market smell. Plus coxinha, X-tudo burgers, home-style plates and fresh sugarcane juice, from breakfast to dinner.",
+    cta1:"Call to order",cta2:"See the menu",
+    fa1:"6 AM",fa2:"we open early, Mon–Sat",fb1:"Fresh",fb2:"you order, we fry, it's piping hot",fc2:"Broadway, Somerville, MA",
+    seal:'Fried<br>to order<small>always!</small>',sealtxt:'MORE THAN FOOD ✦ GOOD MOMENTS ✦ FRIED TO ORDER ✦',
+    mk:"House favorites",mh:'Hungry?<br><em>Take your pick.</em>',
+    mp:"From classic Brazilian snacks to a home-style plate. Real Brazilian recipes, made to order.",
+    tg1:"The signature",stamp:"Fried<br>to<br>order",t1h:"Pastéis",
+    t1p:"Big, crispy and generously filled. From the classic chicken with catupiry to shrimp with cheese. Sweet ones too.",
+    f1:"Chicken & catupiry",f2:"Shrimp & cheese",f3:"Hearts of palm",f4:"Beef",f5:"Banana & sugar",
+    tg2:"Fried to order",t2p:"Crispy shell, creamy chicken inside.",
+    tg3:"Ice cold",t3h:"Sugarcane juice",t3p:"Pastel's official partner. Fresh juices too.",
+    tg4:"Big appetite",t4p:"Bun, beef patty, cheese, ham, egg, bacon, lettuce, tomato, potato sticks and corn. Need we say more?",
+    tg5:"Taste of home",t5h:"Home-style plates",t5p:"Rice, beans, salad, farofa and a hearty main.",
+    tg6:"Childhood flavor",t6h:"Sweets",t6p:"Warm churros, chocolate cake and brigadeiro.",
+    mm:"And there's more!",mmp:"Pão de queijo, savory snacks, sandwiches and a <b>mini market with Brazilian products</b>. Full menu and prices at the counter or by phone.",mmc:"Ask for the menu",
+    bk:"You're the boss here",bh:'Build your <em>pastel</em>',bp:"Pick up to 3 fillings and watch your order ticket print. Then just call and we'll fry it fresh.",
+    bt:"Choose your fillings",bhint:"Tap to add or remove (max. 3).",g1:"Savory",g2:"Sweet",
+    sg:"No idea? Go classic:",sg1:"Chicken + Catupiry",sg2:"Shrimp + Cheese",sg3:"Beef + Cheese",sg4:"Banana & sugar",
+    tkn:"ORDER Nº 0192",tk1:"1x BIG PASTEL",tk2:"Fried to order",tk3:"Made with love",tk4:"HAPPINESS",
+    bcta:"Call and order mine",bnote:"Flavors depend on daily availability. Ask about the Pastel Vitória, our house favorite!",
+    ik:"Straight from our Insta",ih:'Follow us and <em>get hungry</em>',ifollow:"Follow",
+    po1:"And nothing beats a Pastelaria Vitória pastel to make your day!",po2:"Coxinha<br>fried<br>fresh!",po3:"A love called<b>PASTEL</b>",po4:"Home-style<br>food",po5a:"Sweet taste of childhood",po5:'Churros<br><span>warm?</span>',
+    po6a:"Hunger poll",po6:"Today is a day for:",pl1:"Pastel",pl2:"Coxinha",pl3:"All of the above",
+    note:"Open early! 6 AM Mon–Sat",ak:"A little piece of Brazil in the US",ah:'More than food, <em>good moments.</em>',
+    ap:"At Pastelaria Vitória, your pastel goes straight from the fryer into your hands. It's a snack bar, a home-style kitchen and a Brazilian mini market, <b>all under one roof</b> on Broadway in Somerville. If you're far from home, it's a hug in food form. If you've never been to Brazil, it's the best place to start.",
+    p1t:"Fried to order",p1p:"No pastel sitting on the counter.",p2t:"Taste of home",p2p:"Brazilian seasoning from breakfast to dinner.",p3t:"Mini market",p3p:"The Brazilian products you miss.",
+    vk:"Come hungry",vh:'We\'re on <em>Broadway</em>,<br>the Somerville one.',vp:"Close to Winter Hill and East Somerville. Eat in, take out or order by phone.",
+    h1d:"Monday to Saturday",h1h:"6 AM – 10 PM",h2d:"Sunday",h2h:"7 AM – 5 PM",k1:"Dine in",k2:"Takeout",k3:"Cards accepted",vroute:"Get directions",
+    fh:'Hungry?<em>Come to Vitória!</em>',fp:"Call, order and pick it up. Or just stop by and choose on the spot. Hot pastel waiting for you at 192 Broadway.",cta3:"Get directions",
+    slogan:"More than food, good moments!",fe:"Address",fho:"Hours",fh1:"Mon–Sat: 6 AM – 10 PM",fh2:"Sunday: 7 AM – 5 PM",fnav:"Explore"
+  };
+  var PT={}, nodes=document.querySelectorAll('[data-i18n]');
+  nodes.forEach(function(n){var k=n.getAttribute('data-i18n'); if(!(k in PT)) PT[k]=n.innerHTML;});
+  var lang='pt';
+  try{var sv=localStorage.getItem('pvb-lang'); if(sv==='en'||sv==='pt') lang=sv;}catch(e){}
+  var fills=[].slice.call(document.querySelectorAll('.fill')), picked=[];
+
+  function applyLang(l){
+    lang=l; var d=l==='en'?EN:PT;
+    nodes.forEach(function(n){var k=n.getAttribute('data-i18n'); if(d[k]!=null) n.innerHTML=d[k];});
+    document.documentElement.lang=l==='en'?'en':'pt-BR';
+    document.title=l==='en'?'Pastelaria Vitória Broadway | Brazilian pastel fried to order in Somerville, MA':'Pastelaria Vitória Broadway | Pastel frito na hora em Somerville, MA';
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===l);});
+    fills.forEach(function(b){b.querySelector('span').innerHTML=b.dataset[l];});
+    try{localStorage.setItem('pvb-lang',l);}catch(e){}
+    updateStatus(); renderTicket(false); renderPoll();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.lang);});});
+
+  /* aberto / fechado no horário de Somerville */
+  var H={0:[7,17],1:[6,22],2:[6,22],3:[6,22],4:[6,22],5:[6,22],6:[6,22]};
+  function fmtH(h){ if(lang==='en'){return (h%12||12)+' '+(h>=12?'PM':'AM');} return h+'h'; }
+  function nowNY(){
+    try{var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'numeric',minute:'numeric',month:'2-digit',day:'2-digit',hour12:false}).formatToParts(new Date());
+      var o={};p.forEach(function(x){o[x.type]=x.value;});
+      return {d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday),t:(parseInt(o.hour,10)%24)+parseInt(o.minute,10)/60,dd:o.day,mm:o.month};
+    }catch(e){var x=new Date();return {d:x.getDay(),t:x.getHours()+x.getMinutes()/60,dd:('0'+x.getDate()).slice(-2),mm:('0'+(x.getMonth()+1)).slice(-2)};}
+  }
+  function updateStatus(){
+    var n=nowNY(), h=H[n.d], el=document.getElementById('status'), tx=document.getElementById('statusTxt');
+    var open=n.t>=h[0]&&n.t<h[1]; el.className='status '+(open?'open':'closed');
+    if(open) tx.textContent=lang==='en'?'Open now · closes at '+fmtH(h[1]):'Aberto agora · fecha às '+fmtH(h[1]);
+    else if(n.t<h[0]) tx.textContent=lang==='en'?'Closed now · opens today at '+fmtH(h[0]):'Fechado agora · abre hoje às '+fmtH(h[0]);
+    else { var nh=H[(n.d+1)%7][0]; tx.textContent=lang==='en'?'Closed now · opens tomorrow at '+fmtH(nh):'Fechado agora · abre amanhã às '+fmtH(nh); }
+    document.querySelectorAll('#hours tr').forEach(function(r){
+      r.classList.toggle('today', r.getAttribute('data-days').split(',').map(Number).indexOf(n.d)>-1);
+      r.querySelector('td').setAttribute('data-today', lang==='en'?'today':'hoje');
+    });
+    document.getElementById('tkDate').textContent = lang==='en' ? n.mm+'/'+n.dd : n.dd+'/'+n.mm;
+  }
+  setInterval(updateStatus,60000);
+
+  /* comanda */
+  function renderTicket(anim){
+    var items=document.getElementById('tkItems'), msg=document.getElementById('tkMsg');
+    if(!picked.length){ items.innerHTML='<div class="empty">'+(lang==='en'?'(choose your fillings)':'(escolha os recheios)')+'</div>'; }
+    else items.innerHTML=picked.map(function(b){return '<div class="tk-row"><span>+ '+b.dataset[lang]+'</span><span>✔</span></div>';}).join('');
+    var M=lang==='en'?['Pick your fillings!','Looking good...','Now we\'re talking!','Champion combo! 🏆']:['Escolhe aí os recheios!','Tá ficando bom...','Agora sim, hein!','Combinação campeã! 🏆'];
+    msg.textContent=M[picked.length];
+    fills.forEach(function(b){b.disabled=picked.length>=3&&picked.indexOf(b)===-1;});
+    if(anim){var p=document.getElementById('tkPastel');p.classList.remove('pop');void p.getBoundingClientRect();p.classList.add('pop');setTimeout(function(){p.classList.remove('pop');},420);}
+  }
+  fills.forEach(function(b){b.addEventListener('click',function(){
+    var i=picked.indexOf(b);
+    if(i>-1){picked.splice(i,1);b.setAttribute('aria-pressed','false');}
+    else if(picked.length<3){picked.push(b);b.setAttribute('aria-pressed','true');}
+    renderTicket(true);
+  });});
+  document.querySelectorAll('[data-combo]').forEach(function(sb){sb.addEventListener('click',function(){
+    var want=sb.getAttribute('data-combo').split(','); picked=[];
+    fills.forEach(function(b){var on=want.indexOf(b.dataset.pt)>-1;b.setAttribute('aria-pressed',on);if(on)picked.push(b);});
+    renderTicket(true);
+  });});
+
+  /* enquete */
+  var pollSel=-1, pollBtns=[].slice.call(document.querySelectorAll('#poll button'));
+  function renderPoll(){
+    pollBtns.forEach(function(b,i){b.classList.toggle('sel',i===pollSel);});
+    var A=lang==='en'?['Great choice! Come get it 😋','Fried fresh, waiting for you!','That\'s the spirit! 🇧🇷']:['Boa escolha! Vem buscar 😋','Fritinha na hora te esperando!','Esse é o espírito! 🇧🇷'];
+    document.getElementById('pollAns').textContent = pollSel>-1 ? A[pollSel] : '';
+  }
+  pollBtns.forEach(function(b,i){b.addEventListener('click',function(){pollSel=i;renderPoll();});});
+
+  /* nav */
+  var nav=document.getElementById('nav'), burger=document.getElementById('menuBtn');
+  burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+  document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');burger.setAttribute('aria-expanded',false);});});
+  function onScroll(){nav.classList.toggle('scrolled', window.scrollY>30);}
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* reveal */
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    rv.forEach(function(el){io.observe(el);});
+  } else rv.forEach(function(el){el.classList.add('in');});
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  applyLang(lang);
+})();
+</script>
+</body>
+</html>
